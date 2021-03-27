@@ -1,5 +1,6 @@
 node_modules/
 .cache/
+.vscode
 public
 
 # Local Netlify folder
