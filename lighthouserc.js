@@ -1,10 +1,9 @@
 module.exports = {
   ci: {
     upload: {
-      target: 'temporary-public-storage',
-      // target: 'lhci',
-      // token: '28d7e421-645d-486b-85ba-3a68a580495a',
-      // serverBaseUrl: 'https://frozen-anchorage-54353.herokuapp.com/',
+      target: 'lhci',
+      token: '11378fc3-5660-4681-8ef5-0e8136ff308c',
+      serverBaseUrl: 'https://serene-harbor-65729.herokuapp.com/',
     },
     collect: {
       numberOfRuns: 3,
