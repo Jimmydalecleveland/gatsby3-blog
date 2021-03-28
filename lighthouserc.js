@@ -14,9 +14,9 @@ module.exports = {
       assertions: {
         'largest-contentful-paint': ['error', { maxNumericValue: 2000 }],
         'categories:performance': ['error', { minScore: 0.9 }],
-        'categories:accessibility': ['warn', { minScore: 1 }],
-        'categories:best-practices': ['error', { minScore: 0.9 }],
-        'categories:seo': ['error', { minScore: 0.9 }],
+        // 'categories:accessibility': ['warn', { minScore: 1 }],
+        // 'categories:best-practices': ['error', { minScore: 0.9 }],
+        // 'categories:seo': ['error', { minScore: 0.9 }],
       },
     },
   },
