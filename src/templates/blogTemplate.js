@@ -47,7 +47,7 @@ const Template = ({ data }) => {
           {frontmatter.title}
         </Typography>
       </header>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Layout dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }

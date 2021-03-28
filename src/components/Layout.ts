@@ -13,6 +13,10 @@ const Layout = styled.main`
     grid-column: 2 / 3;
   }
 
+  > main {
+    grid-column: 1 / -1;
+  }
+
   > .main-logo {
     grid-column: 2 / 3;
     margin: 0 auto;
