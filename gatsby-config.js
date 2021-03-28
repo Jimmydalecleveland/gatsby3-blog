@@ -12,10 +12,16 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: 'src/images/icon.png'
-      }
+        name: 'Swashbuckling with Code',
+        short_name: 'SwCblog',
+        start_url: '/',
+        background_color: '#0e192c',
+        theme_color: '#0e192c',
+        display: 'minimal-ui',
+        icon: 'src/images/jdc-logo.png',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
