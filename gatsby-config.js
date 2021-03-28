@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Swashbuckling with Code'
+    siteUrl: "https://www.swashbucklingwithcode.com",
+    author: "Jimmy Cleveland",
+    title: 'Swashbuckling with Code',
+    description:
+      'A place where I can write down things I have learned for myself and others to reference',
   },
   plugins: [
     'gatsby-plugin-emotion',
