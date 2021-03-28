@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-// import SwcLogo from "../public/assets/swc-logo.svg";
+import SwcLogo from "../images/swc-logo.svg";
 import Layout from "../components/Layout";
 import Typography from "../components/Typography";
 
@@ -11,6 +11,7 @@ const Template = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, fields, html } = markdownRemark
   const image = getImage(frontmatter.featuredImage)
+  console.log({ ...frontmatter })
 
   return (
     <Layout as="article" itemType="http://schema.org/Article">
@@ -28,17 +29,15 @@ const Template = ({ data }) => {
           image={image}
           alt="pointless featured image for post"
         />
-        {/* <Link href="/">
-          <a>
-            <SwcLogo className="main-logo" />
-          </a>
-        </Link> */}
+        <Link to="/">
+          <img className="main-logo" src={SwcLogo} alt="Swashbuckling with Code Logo" />
+        </Link>
         {frontmatter.attributionName && (
           <a
             className="attribution"
             href={frontmatter.attributionLink}
             target="_blank"
-            rel="noopener"
+            rel="noreferrer noopener"
           >
             Photo by {frontmatter.attributionName}
           </a>
@@ -64,6 +63,8 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        attributionName
+        attributionLink
         featuredImage {
           childImageSharp {
             gatsbyImageData(transformOptions: { fit: COVER }, layout: FIXED)
