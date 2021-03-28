@@ -84,7 +84,7 @@ export default Index;
 
 export const homePageQuery = graphql`
   query HomePageQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           fields {
