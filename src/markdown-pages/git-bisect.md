@@ -250,7 +250,7 @@ The extra `--` is to pass additional flags to our test script, which you don't h
 This is what it will look like when we find our first bad commit.
 
 <figure>
-  <img src="/assets/git-bisect-snapshot-fail.png" alt="snapshot failure showing earned credits difference: received 137 when the expected was 47"></img>
+  <img src="../images/git-bisect-snapshot-fail.png" alt="snapshot failure showing earned credits difference: received 137 when the expected was 47"></img>
 </figure>
 
 _Note: This new format for snapshot diffing comes from <a href="https://jestjs.io/blog/2020/01/21/jest-25#colors-of-differences-when-snapshot-tests-fail" target="_blank" rel="noopener noreferrer">Jest v25</a>. It is mega cool and lovely to look upon. They really put some time and research into this decision and that is awesome. It does currently have a bug with emotion-jest, in case you encounter that, but they are working on it. (<a href="https://github.com/facebook/jest/pull/9863" target="_blank" rel="noopener noreferrer">facebook/jest PR</a>, <a href="https://github.com/emotion-js/emotion/pull/1850" target="_blank" rel="noopener noreferrer">emotion-js PR</a>)_
@@ -280,7 +280,7 @@ git bisect run npm test
 The exit codes from the test passing or failing will tell git which commits are good or bad automatically. This is unbelievably cool, check this gif out to see the full run:
 
 <video autoplay loop controls>
-  <source src="/assets/git-bisect-automated.webm" type="video/webm">
+  <source src="../images/git-bisect-automated.webm" type="video/webm">
 </video>
 
 ### Conclusion

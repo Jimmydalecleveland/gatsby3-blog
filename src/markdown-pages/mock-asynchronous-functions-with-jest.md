@@ -48,7 +48,7 @@ describe("swapiGetter", () => {
 This test simply requests the person's name with id 1, and then expects that to be the returned value. When I run this test, the test will fail. I've added the `console.log` to help show why.
 
 <figure>
-  <img src="/assets/axios-test-without-waiting.png" alt="Axios test without waiting"></img>
+  <img src="../images/axios-test-without-waiting.png" alt="Axios test without waiting"></img>
 </figure>
 
 If we are running asynchronous code, we need to wait for it. I included this failure because it comes up rather often when people encounter `undefined` from their test and think that their mock is not working correctly. I wanted to show that without mocking in the mix, this is a common culprit. It's really common for me, and I know other coders, to look first to the new technology or tool they are using as the reason something is not working, when often it is something we already know and would be obvious if we weren't trying out something foreign.
@@ -77,7 +77,7 @@ jest.mock("axios");
 Sometimes this is sufficient, as it will replace the default export of that module with a function that returns nothing. If we run our test again this is what we see:
 
 <figure>
-  <img src="/assets/default-mock-axios.png" alt="Default Mock Axios"></img>
+  <img src="../images/default-mock-axios.png" alt="Default Mock Axios"></img>
 </figure>
 
 In our `swapiGetter` function we call `axios.get`, so we need to mock that method from the module. In order to do this we need to import `axios` into our test file, but we'll change the name to `mockAxios` to make it clear that we are mocking this import locally. With that imported, we can mock the method:
@@ -96,7 +96,7 @@ mockAxios.get.mockImplementation(() => Promise.resolve());
 Running this test will get us a little further, but we actually need to return some data or we will receive something like this:
 
 <figure>
-  <img src="/assets/mock-axios-no-return.png" alt="Mock Axios with no return"></img>
+  <img src="../images/mock-axios-no-return.png" alt="Mock Axios with no return"></img>
 </figure>
 
 The `res` (response) variable we are looking for in our `.then` callback is `undefined` and therefore we cannot get `data.name` off it. Alright, that's an easy fix:
@@ -197,7 +197,7 @@ test("duplicate of first test", async () => {
 ```
 
 <figure>
-  <img src="/assets/mock-multiple-tests-without-clearing.png" alt="Mock multiple tests without clearing"></img>
+  <img src="../images/mock-multiple-tests-without-clearing.png" alt="Mock multiple tests without clearing"></img>
 </figure>
 
 Well that is unfortunate, and may really cause some headaches to the unsuspecting. This is due to the fact that mocks have internal state for tracking how many times they've been called, what arguments have been passed to them, and other things.

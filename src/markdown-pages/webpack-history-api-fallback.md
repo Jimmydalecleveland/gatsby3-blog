@@ -33,7 +33,7 @@ This has usually taken care of the problem simply enough for me, but I ran into 
 When clicking through to a route using `<Link>` tags, everything loads correctly. But if I refreshed the page or entered the url manually, I received a blank page and the following error.
 
 <figure>
-  <img src="/assets/webpack-issue-relative-path.png" alt="browser console error. error text following."></img>
+  <img src="../images/webpack-issue-relative-path.png" alt="browser console error. error text following."></img>
 </figure>
 
 `The resource from “http://localhost:8080/character/main.js” was blocked due to MIME type (“text/html”) mismatch (X-Content-Type-Options: nosniff).`
@@ -54,7 +54,7 @@ Thanks to this <a href="https://github.com/ReactTraining/react-router/issues/676
 ### Error: downloadable font: download failed
 
 <figure>
-  <img src="/assets/webpack-issue-font.png" alt="browser console error. error text following"></img>
+  <img src="../images/webpack-issue-font.png" alt="browser console error. error text following"></img>
 </figure>
 
 `downloadable font: download failed (font-family: "Rokkitt" style:normal weight:400 stretch:100 src index:2): status=2147746065 source: http://localhost:8080/character/6cff0ff498f65766b3dc53a1442a80e9.woff2`

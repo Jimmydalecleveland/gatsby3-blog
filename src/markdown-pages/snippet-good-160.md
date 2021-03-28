@@ -13,7 +13,7 @@ attributionLink: "https://unsplash.com/@dancristianp?utm_source=unsplash&amp;utm
 The [CHANGELOG.md](https://github.com/Jimmydalecleveland/js--snippet-good/blob/master/CHANGELOG.md) has notes of the changes and any new snippets.
 
 <figure>
-  <img src="/assets/snippet-rus.gif" alt="'rus' snippet in action"></img>
+  <img src="../images/snippet-rus.gif" alt="'rus' snippet in action"></img>
 </figure>
 
 What I thought would be a quick update became a very ..._interesting_ challenge. While setting up snippets for the hooks I use the most, I had a thought that it would be cool if the 2 values that come back from `useState` could be typed at once. This would be trivial if the 2nd didn't need to be transformed to a camelCase version of the first (e.g. `loading, setLoading`).

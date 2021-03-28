@@ -17,7 +17,7 @@ I've been doing a lot of testing lately at work, and after updating to the lates
 Here's the `rtlbs` snippet in action.
 
 <figure>
-  <img src="/assets/rtlbs-snippet.gif" alt="'rtlbs' snippet in action"></img>
+  <img src="../images/rtlbs-snippet.gif" alt="'rtlbs' snippet in action"></img>
 </figure>
 
 _Note: I don't worry about a self-closing version of the JSX component because my linter will take care of that if no children are passed_

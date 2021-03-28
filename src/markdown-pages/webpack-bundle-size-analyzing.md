@@ -15,7 +15,7 @@ I'm using a [repo for starting new projects](https://github.com/Jimmydaleclevela
 This is a browser app that lets you drop in a json file of your webpack build and turns it into an interactive chart. Here's what my starting bundle looks like through the tool.
 
 <figure>
-  <img src="/assets/webpack-start.gif" alt="main.js bundle visualized animation"></img>
+  <img src="../images/webpack-start.gif" alt="main.js bundle visualized animation"></img>
 </figure>
 
 To get started, you'll need to run a webpack command in your terminal of choice.
@@ -46,7 +46,7 @@ The default name and size shown in the center circle is your whole bundle if you
 You can see that when I hover the innermost blue band, "node_modules" shows up in the center, and a thin sliver in the north becomes a lower opacity. This is to represent that `node_modules` is part of the `main.js` file, and includes all the non transparent bands within it. This is the same gif as the previous one, just placed here for easier reference while I discuss it.
 
 <figure>
-  <img src="/assets/webpack-start.gif" alt="main.js bundle visualized animation"></img>
+  <img src="../images/webpack-start.gif" alt="main.js bundle visualized animation"></img>
 </figure>
 
 As I move out to the next band, a green one with the title "react-dom", the "node_modules" band and a few slices in the northwest become transparent. This tells us that "react-dom" is a very large dependency in our bundle. So far we've determined that `node_modules` is the vast majority of our bundle (98.7%), and that the `react-dom` package is the vast majority of size in our `node_modules`.
@@ -62,7 +62,7 @@ Finally, you can see the "src" chunk in the northern area is quite small (0.8%),
 A nice alternative tool is the package [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) package. The UI can be a little wonky but it has some cool features _and_ you can run the exact same script, without dropping the `.json` output file in a browser every time you build. It actually auto-opens a new browser window with a localhost page. Here's an example of what it looks like for the same `main.js` bundle we've seen so far.
 
 <figure>
-  <img src="/assets/webpack-bundle-analyzer-minimal.png" alt="webpack bundle analyzer with only a few packages"></img>
+  <img src="../images/webpack-bundle-analyzer-minimal.png" alt="webpack bundle analyzer with only a few packages"></img>
 </figure>
 
 The zooming in by clicking/scrolling of this tool had unintuitive behavior to me, but I like the general visualization of boxes. It reminds me of a lovely little tool called [Windirstat](https://windirstat.net/) for Windows that helps visualize disk space usage.
@@ -142,7 +142,7 @@ export default hot(module)(App);
 And what does the great visualizer tell us now? (hover text is difficult to read, you can click the image for a bigger size)
 
 <figure>
-  <img src="/assets/webpack-bundle-analyzer-emotion-email-icon.png" alt="bundle visualized with one icon imported"></img>
+  <img src="../images/webpack-bundle-analyzer-emotion-email-icon.png" alt="bundle visualized with one icon imported"></img>
 </figure>
 
 Well! Look who showed up to the party. It seems loading that icon has added 24.02 KB to our bundle (9.62 KB Gzipped). But what's with the "+ 15 modules (concatenated)?
@@ -198,13 +198,13 @@ const App = () => (
 I just chose the first icons that came up in autocomplete. By the way, you can check out the whole list with this handy little [docz site](https://rosenstein.io/emotion-icons/). We should see a bigger bundle size, right? If not, we can assume that if even one icon is imported, the whole package is imported.
 
 <figure>
-  <img src="/assets/webpack-bundle-analyzer-10-icons-used.png" alt="bundle visualized with 10 icons imported and used"></img>
+  <img src="../images/webpack-bundle-analyzer-10-icons-used.png" alt="bundle visualized with 10 icons imported and used"></img>
 </figure>
 
 Well that is pretty cool. Each of the icons show up in our visualizer, and we can see that emotion-icons is now 29.46 KB (10.73 KB Gzipped), rather than the 24.02 KB we saw earlier with just one icon imported. Let's see what that looks like in Webpack Visualizer.
 
 <figure>
-  <img src="/assets/webpack-10icons.gif" alt="main.js with 10 icons animation"></img>
+  <img src="../images/webpack-10icons.gif" alt="main.js with 10 icons animation"></img>
 </figure>
 
 You can see the blue "material" slice is comprised of 10 little orange icon slices. The green "emotion-icons" slice is pretty large in comparison, so this probably isn't a package you'd want to use for just a couple icons.
@@ -231,7 +231,7 @@ const App = () => <div>All icons shall waste away with disuse:(.</div>;
 Which results in:
 
 <figure>
-  <img src="/assets/webpack-bundle-analyzer-10-imported-none-used.png" alt="bundle visualized with 10 icons imported but none being used"></img>
+  <img src="../images/webpack-bundle-analyzer-10-imported-none-used.png" alt="bundle visualized with 10 icons imported but none being used"></img>
 </figure>
 
 Back to the original bundle size with no icons being imported at all. Now that that sanity check is taken care of, let's get crazy.
@@ -279,7 +279,7 @@ For more info visit https://webpack.js.org/guides/code-splitting/
 But it did work! and here is the visualized bundle.
 
 <figure>
-  <img src="/assets/webpack-bundle-analyzer-load-all-icons.png" alt="bundle visualized with every icon imported"></img>
+  <img src="../images/webpack-bundle-analyzer-load-all-icons.png" alt="bundle visualized with every icon imported"></img>
 </figure>
 
 Wow! 580.68 KB in just the `emotion-icons` package now. I, of course, removed the `.map` to see if the `import * as Material` would still be ignored in the final bundle, and it was. An interesting side note, though. If you even `console.log` the import, it will add the whole package to the bundle, like you see in the previous screenshot.

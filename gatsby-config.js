@@ -17,16 +17,21 @@ module.exports = {
         icon: 'src/images/icon.png'
       }
     },
-    'gatsby-transformer-remark',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: './src/pages/'
+      },
+      __key: 'pages'
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown-pages',
         path: './src/markdown-pages/'
       },
-      __key: 'images'
+      __key: 'markdown'
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -37,12 +42,28 @@ module.exports = {
       __key: 'images'
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: 'pages',
-        path: './src/pages/'
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
       },
-      __key: 'pages'
-    }
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
   ]
 }

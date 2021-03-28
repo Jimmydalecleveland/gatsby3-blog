@@ -15,13 +15,13 @@ Let's say you wanted to disable cache in DevTools while testing out a site you a
 ### I really wish they would make this more obvious
 
 <figure>
-  <img src="/assets/disable-cache-byby.gif" alt="disable cache checkbox not visible when resizing devtools window"></img>
+  <img src="../images/disable-cache-byby.gif" alt="disable cache checkbox not visible when resizing devtools window"></img>
 </figure>
 
 Rather than searching around, you can actually use the Command Menu/Palette shortcut (`Control+Shift+p` or `Command+Shift+p` on Mac) and type in "cache". It uses fuzzy search so you can just guess at what you are trying find with random words (as long as they are in order) and Chrome will figure it out, unlike Windows search which was designed to not find what you want. Simply hit enter on the command you want to run and it will check that box for you. Super cool of the Chrome team to add this functionality in, I find myself using it often just to save time as well.
 
 <figure>
-  <img src="/assets/command-menu-disable-cache.gif" alt="disabling cache using the command menu"></img>
+  <img src="../images/command-menu-disable-cache.gif" alt="disabling cache using the command menu"></img>
 </figure>
 
 ### Great for finding unknown functionality
@@ -29,7 +29,7 @@ Rather than searching around, you can actually use the Command Menu/Palette shor
 You can also use the command menu to look through tons of fun and useful functionalities that Chrome has that would be a lot more cumbersome to look for by clicking around through the DevTools GUI. This is how I found the "show third party badges" option for the network tab, which is a nice quality of life feature for me.
 
 <figure>
-  <img src="/assets/third-party-tags.gif" alt="show third party tags command"></img>
+  <img src="../images/third-party-tags.gif" alt="show third party tags command"></img>
 </figure>
 
 It can also just be faster. When I want to take a full page screenshot I just press the shortcut and begin typing "fullscreen" and hit enter. Toggling Javascript, pausing on exceptions, and paint flashing, are all really quick from the command menu. That's all I've got for this one, you can leave now.

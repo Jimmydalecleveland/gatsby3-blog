@@ -71,7 +71,7 @@ document.body.appendChild(component());
 After running this code through Babel, we can open it up in a browser and check out the console tab of devtools to see the output.
 
 <figure>
-  <img src="/assets/chrome-transpiled-success.png" alt="screenshot of chrome console"></img>
+  <img src="../images/chrome-transpiled-success.png" alt="screenshot of chrome console"></img>
 </figure>
 
 Everything runs as expected, with no errors. For people brand new to this world, this is where they might stop. But if you change the `index.html` to load the `src/index.js`, rather than the Babelified code, and remove the `import` statement and the associated invocation and log, you would see that the rest of the code works fine.
@@ -81,7 +81,7 @@ _Note: If you are curious as to why we need to remove any imports to get it runn
 In this example I'm using Chrome 72, which supports all the previous code (`import` excluded, as it's a special case). If we were to load this up in IE11, however, we'd see this:
 
 <figure>
-  <img src="/assets/ie-pre-transpilation-error.png" alt="screenshot of IE11 console"></img>
+  <img src="../images/ie-pre-transpilation-error.png" alt="screenshot of IE11 console"></img>
 </figure>
 
 It's failing on line 3 when it encounters the `=>` symbol. If you take a look at [caniuse](https://caniuse.com/#feat=arrow-functions) for ES6 arrow functions, you'll see that IE11 does not support it, so that makes sense.
@@ -89,7 +89,7 @@ It's failing on line 3 when it encounters the `=>` symbol. If you take a look at
 Let's go back to the original, transpiled setup and see what happens in IE11.
 
 <figure>
-  <img src="/assets/ie-transpiled-error.jpg" alt="screenshot of IE11 console"></img>
+  <img src="../images/ie-transpiled-error.jpg" alt="screenshot of IE11 console"></img>
 </figure>
 
 It almost looks like we are back in business, with our `import`, arrow functions, Object spread, `let` and `const` all working... until we hit a snag on the `Object.values` part of our code.
@@ -240,7 +240,7 @@ Babel recommends you select each polyfill you need, rather than adding every pol
 After adding polyfills, IE11 runs our code without errors.
 
 <figure>
-  <img src="/assets/ie-transpile-success.png" alt="screenshot of IE11 console"></img>
+  <img src="../images/ie-transpile-success.png" alt="screenshot of IE11 console"></img>
 </figure>
 
 ### Why not automatically add polyfills for methods my code _actually_ uses?
