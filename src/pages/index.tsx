@@ -20,6 +20,7 @@ interface AllPostsQuery {
 
 interface BlogPost {
   node: {
+    excerpt: string;
     fields: {
       slug: string;
     };
@@ -53,6 +54,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
 
       {posts.map(({ node }) => {
         const {
+          excerpt,
           fields: { slug },
           frontmatter: { title, description, featuredImage },
         } = node;
@@ -63,7 +65,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
             <PostCard>
               <div className="text">
                 <Typography as="h4">{title}</Typography>
-                <Typography>{description}</Typography>
+                <Typography>{excerpt}</Typography>
               </div>
               <div className="image-wrapper">
                 <GatsbyImage
@@ -87,6 +89,7 @@ export const homePageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          excerpt
           fields {
             slug
           }
