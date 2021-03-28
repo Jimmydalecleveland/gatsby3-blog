@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import { PageProps, graphql, Link } from "gatsby";
 // import SwcLogo from "../images/swc-logo.svg";
 import LayoutGrid from "../components/Layout";
@@ -32,12 +33,12 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
 
   return (
     <LayoutGrid>
-      {/* switch to helmet */}
-      {/* <head>
+      <Helmet>
         <meta name="description" content="Jimmy Cleveland's Coding Blog" />
         <title>Swashbuckling with Code -- Jimmy Cleveland's Coding Blog</title>
         <link rel="canonical" href="https://blog.jimmydc.com/" />
-      </head> */}
+      </Helmet>
+
       {/* <SwcLogo className="main-logo" style={{ margin: "1.5rem auto" }} /> */}
       <Typography as="h3" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland

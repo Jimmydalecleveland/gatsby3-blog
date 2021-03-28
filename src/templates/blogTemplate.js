@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Helmet } from "react-helmet";
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -8,19 +9,20 @@ import Typography from "../components/Typography";
 
 const Template = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, fields, html } = markdownRemark
   const image = getImage(frontmatter.featuredImage)
 
   return (
     <Layout as="article" itemType="http://schema.org/Article">
-      {/* <Head>
+      <Helmet>
         <meta
           name="description"
           content={`A blog post on the topic of: ${frontmatter.title}`}
         />
         <title>SwC - {frontmatter.title}</title>
-        <link rel="canonical" href={`https://blog.jimmydc.com/${slug}/`} />
-      </Head> */}
+        <link rel="canonical" href={`https://blog.jimmydc.com/${fields.slug}/`} />
+      </Helmet>
+
       <div className="hero-image">
         <GatsbyImage
           image={image}
@@ -56,6 +58,9 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
