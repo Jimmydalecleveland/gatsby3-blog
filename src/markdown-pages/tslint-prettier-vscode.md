@@ -3,7 +3,7 @@ title: "TSLint and Prettier linting on save with VS Code"
 date: "2019-07-10"
 description: "This is a simple process, yet I had a more difficult time than I'd like trying to find the information not scattered in bits and pieces around the web."
 category: "Dungeoneer's Pack"
-image: "milada-vigerova-sand.jpg"
+featuredImage: "../images/milada-vigerova-sand.jpg"
 attributionName: "Milada Vigerova"
 attributionLink: "https://unsplash.com/@mili_vigerova?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

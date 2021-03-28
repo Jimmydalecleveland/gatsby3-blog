@@ -3,7 +3,7 @@ title: "v1.5.0 release of JS Snippet Good VSCode Extension"
 date: "2020-02-05"
 description: "I just released version 1.5.0 of my VS Code extension: JS - Snippet Good!"
 category: "Trinkets and Baubles"
-image: "vincent-botta-bubbles.jpg"
+featuredImage: "../images/vincent-botta-bubbles.jpg"
 attributionName: "Vincent Botta"
 attributionLink: "https://unsplash.com/@0asa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

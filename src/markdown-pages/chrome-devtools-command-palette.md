@@ -3,7 +3,7 @@ title: "Chrome DevTools Command Palette"
 date: "2019-06-23"
 description: "Chrome DevTools has a Command Menu, much like VSCode and other editors!"
 category: "Trinkets and Baubles"
-image: "steve-johnson-paint.jpg"
+featuredImage: "../images/steve-johnson-paint.jpg"
 attributionName: "Steve Johnson"
 attributionLink: "https://unsplash.com/@steve_j?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

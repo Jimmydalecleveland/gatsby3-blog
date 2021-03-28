@@ -3,7 +3,7 @@ title: "Mocking asynchronous functions with Jest"
 date: "2020-06-16"
 description: "Mocking is a fundamental skill in testing. It allows you to avoid testing parts of your code that are outside your control, or to get reliable return values from said code."
 category: "Dungeoneer's Pack"
-image: "rostyslav-savchyn-stacked-rocks.jpg"
+featuredImage: "../images/rostyslav-savchyn-stacked-rocks.jpg"
 attributionName: "Rostyslav Savchyn"
 attributionLink: "https://unsplash.com/@ross_savchyn?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

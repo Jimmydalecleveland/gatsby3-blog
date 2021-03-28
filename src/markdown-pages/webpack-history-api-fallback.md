@@ -3,7 +3,7 @@ title: "historyApiFallback troubles with webpack-dev-server and React Router"
 date: "2019-08-11"
 description: "If you are using React Router for your SPA (Single Page App) routing, and are running into a problem where hitting a url directly fails to load your route, there is a relatively simple solution..."
 category: "Random Encounter"
-image: "darran-shen-books.jpg"
+featuredImage: "../images/darran-shen-books.jpg"
 attributionName: "Darran Shen"
 attributionLink: "https://unsplash.com/@darranshen?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

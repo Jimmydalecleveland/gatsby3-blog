@@ -3,7 +3,7 @@ title: "A dive into transpiling through Webpack & Babel, plus reducing your bund
 date: "2019-03-08"
 description: "Clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle."
 category: "Arcane Mysteries"
-image: "emanuel-haas-jelly-fish.jpg"
+featuredImage: "../images/emanuel-haas-jelly-fish.jpg"
 attributionName: "Emanuel Haas"
 attributionLink: "https://unsplash.com/@dermanuskript?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 ---

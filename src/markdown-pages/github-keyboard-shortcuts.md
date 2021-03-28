@@ -3,7 +3,7 @@ title: "Github Keyboard Shortcuts"
 date: "2019-08-12"
 description: "Just a quick tip here that most programmers I meet haven't seen before so I thought it'd be cool to share."
 category: "Trinkets and Baubles"
-image: "muhannad-ajjan-wasd.jpg"
+featuredImage: "../images/muhannad-ajjan-wasd.jpg"
 attributionName: "Muhannad Ajjan"
 attributionLink: "https://unsplash.com/@isword?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---

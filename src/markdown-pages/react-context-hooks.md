@@ -3,7 +3,7 @@ title: "A simple example of the React useContext hook"
 date: "2019-10-06"
 description: "A complete code example of how to use the useContext React hook with no fluff or extra overhead."
 category: "Coding Cantrips"
-image: "amin-hasani-charcoal.jpg"
+featuredImage: "../images/amin-hasani-charcoal.jpg"
 attributionName: "Amin Hasani"
 attributionLink: "https://unsplash.com/@aminhasani?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 ---
