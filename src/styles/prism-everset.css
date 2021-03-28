@@ -1,0 +1,203 @@
+/*
+SOLARIZED HEX original colors
+--------- -------
+base03    #002b36
+base02    #073642
+base01    #586e75
+base00    #657b83
+base0     #839496
+base1     #93a1a1
+base2     #eee8d5
+base3     #fdf6e3
+yellow    #b58900
+orange    #cb4b16
+red       #dc322f
+magenta   #d33682
+violet    #6c71c4
+blue      #0ef0f0 *
+cyan      #fde182 *
+green     #bff0ff *
+*/
+
+.prismjs {
+  font-family: 'Crimson Text' sans-serif;
+  background: #0e192c; /* base02 */
+  border: solid 1px #364663;
+  margin-bottom: 2rem;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 85vw;
+
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+code[class*='language-'],
+.prismjs {
+  color: #66ddff; /* base00 */
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  overflow-wrap: anywhere;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.prismjs::-moz-selection,
+.prismjs ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  background: #0e192c; /* base02 */
+}
+
+.prismjs::selection,
+.prismjs ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  background: #0e192c; /* base02 */
+}
+
+/* Code blocks */
+.prismjs * {
+  overflow-wrap: anywhere;
+}
+
+:not(pre) > code[class*='language-'],
+.prismjs {
+  background-color: #0e192c; /* base3 */
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  border: solid 1px #364663;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #798eae; /* base1 */
+}
+
+.token.punctuation {
+  color: #a4afed; /* base01 */
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.tag {
+  color: #faaa74;
+}
+
+.token.operator {
+  color: #51ec9f;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #0ef0f0; /* blue */
+}
+
+.token.string {
+  color: #bff0ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+  color: #fde182; /* cyan */
+}
+
+.token.entity {
+  color: #657b83; /* base00 */
+  background: #0e192c; /* base02 */
+}
+
+.token.keyword {
+  color: #44aabb;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #bff0ff; /* green */
+}
+
+.token.function {
+  color: #32d2d0;
+}
+
+.token.class-name {
+  color: #fa9474;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fa9474; /* orange */
+}
+
+.token.string .token.variable {
+  color: #bff0ff;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* general additions */
+.token.language-javascript {
+  color: #4397cf;
+}
+
+.token.plain-text {
+  color: #ecd4cc;
+}
+
+.token.script-punctuation {
+  color: #51ec9f;
+}
+
+/* Gatsby Additions */
+code[class*='language-'].language-text {
+  white-space: normal;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #162b50;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #fa9474;
+}
