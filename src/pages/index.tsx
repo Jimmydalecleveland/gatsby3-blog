@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { PageProps, graphql, Link } from "gatsby";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+
 import SwcLogo from "../images/swc-logo.svg";
 import LayoutGrid from "../components/Layout";
 import Typography from "../components/Typography";
@@ -24,6 +26,7 @@ interface BlogPost {
     frontmatter: {
       title: string;
       description: string;
+      featuredImage: IGatsbyImageData;
     };
   };
 }
@@ -51,26 +54,23 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
       {posts.map(({ node }) => {
         const {
           fields: { slug },
-          frontmatter: { title, description },
+          frontmatter: { title, description, featuredImage },
         } = node;
+        const image = getImage(featuredImage);
+
         return (
-          <Link key={slug} to={slug}>
+          <Link key={slug} to={slug} className="unstyle">
             <PostCard>
               <div className="text">
                 <Typography as="h4">{title}</Typography>
                 <Typography>{description}</Typography>
               </div>
               <div className="image-wrapper">
-                {/* <Image
+                <GatsbyImage
+                  image={image}
                   className="image"
-                  layout="fixed"
-                  width={200}
-                  height={100}
-                  objectFit="cover"
-                  objectPosition="center"
-                  src={`/assets/${image}`}
-                  alt={image}
-                /> */}
+                  alt="blog post featured image"
+                />
               </div>
             </PostCard>
           </Link>
@@ -93,6 +93,16 @@ export const homePageQuery = graphql`
           frontmatter {
             title
             description
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(
+                  transformOptions: { fit: COVER }
+                  layout: FIXED
+                  width: 200
+                  height: 100
+                )
+              }
+            }
           }
         }
       }

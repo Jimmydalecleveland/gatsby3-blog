@@ -79,6 +79,12 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => (
         text-decoration: none;
         box-shadow: inset 0 -3px 0 ${theme.colors.$highlight};
       }
+
+      a.unstyle {
+        color: inherit;
+        padding: 0;
+        box-shadow: none;
+      }
     `}
   />
 );
