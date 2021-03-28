@@ -77,20 +77,12 @@ const Layout = styled.main`
     }
   }
 
-  .video-container {
+  .gatsby-resp-iframe-wrapper {
     grid-column: 2 / 3;
     margin: ${({ theme }) => theme.space.$5} 0;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
-
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   video {
@@ -143,7 +135,7 @@ const Layout = styled.main`
       grid-column: 2 / 5;
     }
 
-    .video-container {
+    .gatsby-resp-iframe-wrapper {
       grid-column: 2 / 5;
     }
 
