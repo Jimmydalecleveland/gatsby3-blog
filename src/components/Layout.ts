@@ -26,11 +26,23 @@ const Layout = styled.main`
   > figure {
     margin: ${({ theme }) => theme.space.$5} 0;
     grid-column: 2 / 3;
-  }
 
-  img {
-    width: 100%;
-    border-radius: 8px;
+    // Gatsby images wrap the image in a span
+    > span {
+      width: 100%;
+      max-width: none !important;
+    }
+
+    // remove universal link underline
+    a {
+      box-shadow: none;
+    }
+
+    img {
+      border-radius: 8px;
+      // Gatsby image adds a white box-shadow for some reason
+      box-shadow: none !important;
+    }
   }
 
   .hero-image {
@@ -86,7 +98,7 @@ const Layout = styled.main`
     width: 100%;
   }
 
-  pre {
+  .gatsby-highlight {
     margin: ${({ theme }) => theme.space.$5} 0;
     grid-column: 2 / 3;
     width: 100%;
@@ -140,7 +152,7 @@ const Layout = styled.main`
       width: 100%;
     }
 
-    pre {
+    .gatsby-highlight {
       grid-column: 2 / 5;
     }
   }

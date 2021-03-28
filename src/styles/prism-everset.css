@@ -19,8 +19,7 @@ cyan      #fde182 *
 green     #bff0ff *
 */
 
-.prismjs {
-  font-family: 'Crimson Text' sans-serif;
+.gatsby-highlight pre {
   background: #0e192c; /* base02 */
   border: solid 1px #364663;
   margin-bottom: 2rem;
@@ -34,8 +33,9 @@ green     #bff0ff *
   border-radius: 0.3em;
 }
 
-code[class*='language-'],
-.prismjs {
+code[class*="language-"],
+.gatsby-highlight pre {
+  font-family: "Fira Mono", sans-serif;
   color: #66ddff; /* base00 */
   text-align: left;
   white-space: pre-wrap;
@@ -54,32 +54,32 @@ code[class*='language-'],
   hyphens: none;
 }
 
-.prismjs::-moz-selection,
-.prismjs ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
+.gatsby-highlight pre::-moz-selection,
+.gatsby-highlight pre ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
   background: #0e192c; /* base02 */
 }
 
-.prismjs::selection,
-.prismjs ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
+.gatsby-highlight pre::selection,
+.gatsby-highlight pre ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
   background: #0e192c; /* base02 */
 }
 
 /* Code blocks */
-.prismjs * {
+.gatsby-highlight pre * {
   overflow-wrap: anywhere;
 }
 
-:not(pre) > code[class*='language-'],
-.prismjs {
+:not(pre) > code[class*="language-"],
+.gatsby-highlight pre {
   background-color: #0e192c; /* base3 */
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
   border: solid 1px #364663;
@@ -188,7 +188,7 @@ code[class*='language-'] ::selection {
 }
 
 /* Gatsby Additions */
-code[class*='language-'].language-text {
+code[class*="language-"].language-text {
   white-space: normal;
 }
 
