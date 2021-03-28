@@ -15,7 +15,8 @@
     "clean": "gatsby clean",
     "markdownlint": "markdownlint --fix **/*.md --ignore node_modules",
     "lint": "npm run markdownlint && standard --verbose | snazzy",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
@@ -35,6 +36,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.7.0",
     "markdownlint-cli": "^0.27.1",
     "snazzy": "^9.0.0",
     "standard": "^16.0.3"
