@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import SwcLogo from "../images/swc-logo.svg";
+import swcLogo from "../images/swc-logo.svg";
 import Layout from "../components/Layout";
 import Typography from "../components/Typography";
 
@@ -30,7 +30,7 @@ const Template = ({ data }) => {
           alt="pointless featured image for post"
         />
         <Link to="/">
-          <img className="main-logo" src={SwcLogo} alt="Swashbuckling with Code Logo" />
+          <img className="main-logo" src={swcLogo} alt="Swashbuckling with Code Logo" />
         </Link>
         {frontmatter.attributionName && (
           <a
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
         attributionLink
         featuredImage {
           childImageSharp {
-            gatsbyImageData(transformOptions: { fit: COVER }, layout: FIXED)
+            gatsbyImageData(transformOptions: { fit: COVER }, layout: FULL_WIDTH)
           }
         }
       }

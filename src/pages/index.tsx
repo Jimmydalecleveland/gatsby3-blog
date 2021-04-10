@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { PageProps, graphql, Link } from "gatsby";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
-import SwcLogo from "../images/swc-logo.svg";
+import swcLogo from "../images/swc-logo.svg";
 import LayoutGrid from "../components/Layout";
 import Typography from "../components/Typography";
 import PostCard from "../components/PostCard";
@@ -45,7 +45,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
 
       <img
         className="main-logo"
-        src={SwcLogo}
+        src={swcLogo}
         style={{ margin: "1.5rem auto" }}
       />
       <Typography as="h3" center style={{ margin: "20px 0 32px" }}>
