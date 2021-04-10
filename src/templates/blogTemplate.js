@@ -16,6 +16,7 @@ const Template = ({ data }) => {
   return (
     <Layout as="article" itemType="http://schema.org/Article">
       <Helmet>
+        <html lang="en" />
         <meta
           name="description"
           content={`A blog post on the topic of: ${frontmatter.title}`}

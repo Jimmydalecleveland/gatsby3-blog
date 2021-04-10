@@ -38,6 +38,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
   return (
     <LayoutGrid>
       <Helmet>
+        <html lang="en" />
         <meta name="description" content="Jimmy Cleveland's Coding Blog" />
         <title>Swashbuckling with Code -- Jimmy Cleveland's Coding Blog</title>
         <link rel="canonical" href="https://blog.jimmydc.com/" />
