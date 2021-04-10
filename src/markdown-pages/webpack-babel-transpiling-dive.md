@@ -12,13 +12,13 @@ When I have researched this topic in the past I have been unsatisfied by the exp
 
 We'll also be taking a peek under the hood of what happens for some ES6+ transpiled syntax to demystify a few things. Just knowing a little bit of what is going on in the tools I use helps alleviate some of the anxiety I have about things that are "just magic" to me, and often gives me additional places to look during troubleshooting.
 
-### The setup
+## The setup
 
 The source for the starting point of this article can be found [here](https://github.com/Jimmydalecleveland/webpack4-setups/tree/esnext). This repository is a collection of minimal Webpack setups, each on their own branch, that I use as a reference for myself and explaining to others.
 
 _Note: Normally you wouldn't push up your `dist` or distribution/public folder, but since this repo is for examples, I sometimes want to be able to reference the output without cloning down and building._
 
-### Let's get into it
+## Let's get into it
 
 To begin with, we have a simple setup using Webpack and Babel to bundle and transpile a couple of small files that use syntax and methods from a few different ES versions after ES5. This is commonly referred to as ES2015+, or ES6+. You can reference the repo I linked above for the config files if you like, but I'm only going to show snippets of the pertinent code throughout this article.
 
@@ -98,7 +98,7 @@ You can see that IE11 does not know what the `Object.values` method is, as it th
 
 This is the point where many become frustrated with Babel, saying something to the tune of "I thought preset-env was supposed to include everything from ES2015 and after". I think it's a fair assumption, but I have a bias since I've been there myself. The thing about `present-env` is that it includes all ES6+ _syntax_ but not all the _methods_ that have been added since ES5.
 
-### Let's dive a little deeper
+## Let's dive a little deeper
 
 To explain this more clearly, we are going to look at some of the output from Babel. Let's do a before and after of our `Object.values` problem child. Here's the original.
 
@@ -219,7 +219,7 @@ It seems that Babel has "intelligently" realized that our use of `let` will effe
 
 Both of the previous examples were syntax additions to JavaScript so they will work without polyfills. The `Object.values` and `Array.includes` will not be transpiled to anything different, as they are not just syntax, but entirely new methods.
 
-### Why not just include the polyfills by default?
+## Why not just include the polyfills by default?
 
 Sometimes this question comes up when someone's code is failing on older browsers and they expected `preset-env` to include everything ES6+. The simple answer is that that would create a **much** larger file. I'll throw out some relative numbers to this example to hopefully show how much larger that file can be. The unminified version of our `dist/main.js` is 196 lines, and the minified size is 2.55KiB. The unminified version, using polyfills, is over 9000 (9815 in this case). That's 83.9 KiB minified!
 
@@ -243,7 +243,7 @@ After adding polyfills, IE11 runs our code without errors.
   <img src="../images/ie-transpile-success.png" alt="screenshot of IE11 console"></img>
 </figure>
 
-### Why not automatically add polyfills for methods my code _actually_ uses?
+## Why not automatically add polyfills for methods my code _actually_ uses?
 
 In the `.babelrc` file, you can add the `useBuiltIns` option with the `usage` value to only add polyfills which your codebase uses. This is flagged as `experimental` in the Babel docs (as of March 2019). If you do this, do not add `@babel/polyfill` in your webpack entry point. You still need to have `@babel/polyfill` installed, but you shouldn't require it anywhere in your codebase. Here's an example of the `.babelrc`:
 

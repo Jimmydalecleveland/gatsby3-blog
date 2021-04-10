@@ -12,7 +12,7 @@ TL;DR: With Chrome DevTools open, pressing `Control+Shift+p` or `Command+Shift+p
 
 Let's say you wanted to disable cache in DevTools while testing out a site you are working on. Maybe that little checkbox is hidden because your inspector window is too small, maybe some Chrome update has changed where it is, or maybe you just temporarily spaced it and are in the middle of a presentation and don't want to fumble around.
 
-### I really wish they would make this more obvious
+## I really wish they would make this more obvious
 
 <figure>
   <img src="../images/disable-cache-byby.gif" alt="disable cache checkbox not visible when resizing devtools window"></img>
@@ -24,7 +24,7 @@ Rather than searching around, you can actually use the Command Menu/Palette shor
   <img src="../images/command-menu-disable-cache.gif" alt="disabling cache using the command menu"></img>
 </figure>
 
-### Great for finding unknown functionality
+## Great for finding unknown functionality
 
 You can also use the command menu to look through tons of fun and useful functionalities that Chrome has that would be a lot more cumbersome to look for by clicking around through the DevTools GUI. This is how I found the "show third party badges" option for the network tab, which is a nice quality of life feature for me.
 

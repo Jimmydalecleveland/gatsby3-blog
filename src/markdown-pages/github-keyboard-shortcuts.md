@@ -14,7 +14,7 @@ Just a quick tip here that most programmers I meet haven't seen before so I thou
   <img src="../images/github-shortcuts.png" alt="Keyboard shortcuts menu popup">
 </figure>
 
-### Fuzzy search!?
+## Fuzzy search!?
 
 But that isn't even the coolest part. If you press "`t`" while in a repository, it opens up the file finder, which is a fuzzy search if you are more familiar with that term. It's super fast to find files that contain a phrase or path by simply typing it in. You can press enter if the result you want is at the top, and it will take you to that file.
 

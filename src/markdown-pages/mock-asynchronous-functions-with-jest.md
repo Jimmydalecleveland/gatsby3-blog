@@ -14,7 +14,7 @@ Because I remember struggling with this concept myself, and because I encounter 
 
 _Note: I've included the final test code at the bottom of the article for anyone using this as a quick reference. For I am kind._
 
-### The Code
+## The Code
 
 Let's start with a really simple example of a function that makes a call to <a href="https://swapi.dev/" target="_blank" rel="noopener noreferrer">swapi.dev</a>, a fun test API with all sorts of relational data. All this code does is fetch and return a person's name by id.
 
@@ -66,7 +66,7 @@ test("should return the first entry from the api", async () => {
 
 Now our tests will pass, which is fantastic, but they are making calls to axios which we don't want. We really shouldn't be hitting their servers every time we have a test, and what if they are temporarily down or we have a network issue ourselves? What if the API we are hitting changes its data for whatever reason? What we really want is to simulate hitting the API and return consistent data for our tests. In comes the mock!
 
-### Mocking Axios
+## Mocking Axios
 
 To automatically mock an import in jest, you can simply call `jest.mock`. You pass to it the same string you would when importing a module.
 
@@ -115,7 +115,7 @@ expect(result).toBe("Jimmy Jedi");
 
 Super cool. Everything is passing beautifully now. We still need the await, of course, because it's a promise, even though we instantly resolve it.
 
-### mockResolvedValue
+## mockResolvedValue
 
 Now that we are passing it's time for a tiny refactor. We can shorten our mock implementation to:
 
@@ -134,7 +134,7 @@ mockAxios.get.mockImplementation(() =>
 mockAxios.get.mockResolvedValue({ data: { name: 'Jimmy Jedi' } })
 ```
 
-### Ensuring the mocked function was called
+## Ensuring the mocked function was called
 
 We can add an extra layer of assurance that we called the mocked function, and that it was only called the amount of times we expect, with another `expect`. To do this, we can use the imported `mockAxios` we added early and check that it was called.
 
@@ -174,7 +174,7 @@ Which will output:
 
 This is really valuable for sanity checks that your mock is working correctly. We can see a few interesting methods living on this function as well. Hmmmm.
 
-### Clearing Mock State
+## Clearing Mock State
 
 You could end it here, satisfied that your tests are working, but you actually have a bomb waiting to burn your future self or the next person that makes a test for this file.
 
@@ -212,7 +212,7 @@ describe('swapiGetter', () => {
 
 This will cause our tests to pass, and we can delete the duplicate test now that we've saved the future universe from certain collapse. Here is the final version of the test file.
 
-### Complete Test Code
+## Complete Test Code
 
 ```js
 import swapiGetter from "../swapiGetter";

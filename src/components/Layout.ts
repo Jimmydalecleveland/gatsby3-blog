@@ -74,6 +74,8 @@ const Layout = styled.main`
       right: ${({ theme }) => theme.space.$1};
       bottom: ${({ theme }) => theme.space.$1};
       text-shadow: 1px 1px #081a40;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2px 6px;
     }
   }
 

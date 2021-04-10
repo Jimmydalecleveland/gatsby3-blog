@@ -28,7 +28,7 @@ module.exports = {
 
 This has usually taken care of the problem simply enough for me, but I ran into some new problems yesterday that were not easy for me to find a fix for.
 
-### Error: resource was blocked due to MIME type
+## Error: resource was blocked due to MIME type
 
 When clicking through to a route using `<Link>` tags, everything loads correctly. But if I refreshed the page or entered the url manually, I received a blank page and the following error.
 
@@ -51,7 +51,7 @@ The issue is somewhat obvious in hindsight, as it often is, but all I needed to 
 
 Thanks to this <a href="https://github.com/ReactTraining/react-router/issues/676#issuecomment-160249067" target="_blank" rel="noopener noreferrer">Github Issue from BenFlanagan</a>, I realized my folly. This fixes the previous issue, but I had another waiting for me.
 
-### Error: downloadable font: download failed
+## Error: downloadable font: download failed
 
 <figure>
   <img src="../images/webpack-issue-font.png" alt="browser console error. error text following"></img>

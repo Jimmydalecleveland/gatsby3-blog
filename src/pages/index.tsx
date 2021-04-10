@@ -49,7 +49,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
         src={swcLogo}
         style={{ margin: "1.5rem auto" }}
       />
-      <Typography as="h3" center style={{ margin: "20px 0 32px" }}>
+      <Typography as="h2" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland
       </Typography>
 

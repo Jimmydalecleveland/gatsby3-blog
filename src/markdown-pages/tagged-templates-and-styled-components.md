@@ -30,7 +30,7 @@ Well yesterday was the day I had had enough of being ignorant on this topic and 
 
 Throughout this article I'm going to cover what "Tagged Templates" are and how you can write a simplified foundation of a Styled Component function to better understand the syntax you might encounter every day you work with them.
 
-### Let's start with the basics of Tagged Templates
+## Let's start with the basics of Tagged Templates
 
 Hopefully you are already familiar with Template Literals in Javascript, but if not MDN has <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="noopener noreferrer">great documentation</a> for them. They are extremely handy in everyday development and well worth learning.
 
@@ -95,7 +95,7 @@ const myTest2 = doDamage`trip on a stone${7}${3}`;
 
 In this more complicated usage, we have the optional ability to write a string at the beginning, and then list two variables. The function uses some silly conditionals to return a string explaining the damage you have dealt. This could all be done differently using a standard function, but hopefully it shows how tagged templates handle strings and multiple variables.
 
-### Styled Components syntax
+## Styled Components syntax
 
 Now that we have covered the basics of tagged templates, let's start creating our own `styled` function. We'll start with a basic version that has access to `theme` variables.
 
@@ -167,7 +167,7 @@ function styled(css, ...variables) {
 
 I am calling each position in the `css` array (string array) a `chunk`. We write the chunk out and then combine it with the variable of the same `index`. We might have more chunks than variables so we'll need to check if a variable exists at that index and return nothing (i.e. an empty string) otherwise.
 
-### Adding callbacks to access theme and props
+## Adding callbacks to access theme and props
 
 We are near the home stretch now, hang on just a little bit longer. In the first example I showed that for Styled Components they use function callbacks to access `props` and perform logic based on the prop. We are going to combine that with our theme in this last example.
 

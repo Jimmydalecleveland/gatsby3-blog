@@ -32,7 +32,7 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => (
       }
 
       h1 {
-        margin: 0 0 1em;
+        margin: 0 0 16px;
         color: ${theme.colors.$textStandout};
         font-family: ${theme.fonts.$serif};
         font-weight: bold;
@@ -40,18 +40,19 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => (
       }
 
       h2 {
-        margin: 0 0 0.8em;
-        color: ${theme.colors.$textStandout};
-        font-family: ${theme.fonts.$serif};
-        font-weight: bold;
-      }
-
-      h3 {
-        margin: 1em 0 0.5em;
+        margin: 24px 0 12px;
         color: ${theme.colors.$textStandout};
         font-family: ${theme.fonts.$serif};
         font-weight: bold;
         font-size: ${theme.fontSizes.$3};
+      }
+
+      h3 {
+        margin: 16px 0 8px;
+        color: ${theme.colors.$textStandout};
+        font-family: ${theme.fonts.$serif};
+        font-size: ${theme.fontSizes.$2};
+        font-weight: bold;
       }
 
       h4 {
@@ -61,7 +62,7 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => (
       }
 
       p {
-        margin: 0 0 0.6em;
+        margin: 0 0 8px;
 
         code {
           background-color: ${theme.colors.$bgc};

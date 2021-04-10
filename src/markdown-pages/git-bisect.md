@@ -21,13 +21,13 @@ Before I move on, if you prefer to jump right to code examples I have created an
 
 <!-- my general strategy (binary search) and how git bisect relates -->
 
-### The poorly named "binary search" method of finding a bug
+## The poorly named "binary search" method of finding a bug
 
 So what I do is pretty simple, yet extremely effective when I've exhausted the "easy" ways of finding a bug. I put a bunch of logs in my code, and then I delete/comment out about half the code. I run my code, check the logs, and see if the bug goes away. Sometimes this is as easy as deleting the bottom half of a page, or removing a whole import of a file. Sometimes it takes a little more finesse, because the code might not be written into small enough units/functions.
 
 I am not intending to say I pioneered this method, as I'm sure many others have thought of it. I do introduce it to fellow programmers quite often, though, so I wanted to describe it briefly for anyone not familiar. Now that you have the background, let us move on to the real subject of the article.
 
-### Discovering the method in the wild
+## Discovering the method in the wild
 
 While I was doing my nightly twitter cruise, I found this interesting tweet from Dan Abramov:
 
@@ -45,7 +45,7 @@ First thing in the morning I made a repository for trying it out and this is how
 
 <!-- intro to using the repo and that the examples are from the refactoring book -->
 
-### Introduction to the Example Repository
+## Introduction to the Example Repository
 
 I have been rereading Martin Fowler's book, <a href="https://martinfowler.com/articles/refactoring-2nd-ed.html" target="_blank" rel="noopener noreferrer">Refactoring</a>, since the second edition came out with JavaScript examples. This was really cool of him to do; it helps the content to be more approachable to newer developers, since JavaScript has been on the rise and <a href="https://insights.stackoverflow.com/survey/2019#most-popular-technologies" target="_blank" rel="noopener noreferrer">very popular</a> for some years now (it remains at the top of the Stack Overflow survey at least since 2015, but that is obviously not the only metric to follow).
 
@@ -65,7 +65,7 @@ refactor: prev -> renaming variables
 
 At the end of all of these steps, when a refactor is complete and working (hopefully passing tests), you would rebase all these commits into a single refactor commit. For the time being, you want a lot of small steps to be able to isolate any issues you introduce. The perfect setup for a git bisect example.
 
-### The Bug
+## The Bug
 
 On commit `c12489` I purposefully introduced a bug during the refactor that changes the final calculation. Here is the commit message:
 
@@ -107,7 +107,7 @@ It honestly would be easy to miss this bug without a test, since all that has ch
 
 Now, multiple commits later, we realize we have a bug. This is the time for `bisect` to shine!
 
-### Using git bisect to find our bug
+## Using git bisect to find our bug
 
 The purpose of `git bisect` is to find the origin of a bug in your git history by starting with a known bad/new commit, which is the earliest point we know a bug exists, and a good/old commit which is the earliest point we know the bug did not exist. Git will then "bisect" or, as I described it earlier with the binary search, chop the history in half and see if the bug exists. I'm using bug pretty generally here, it could be a performance regression or any unwanted behavior. So we'll start by running the associated commands with that criteria.
 
@@ -216,7 +216,7 @@ bisect run success
 
 I left that extra little message in the commit so we could be sure that the bisect was correct in finding the origin of the bug. Pretty amazing, huh? Now if only we had a test in place to speed up this process and make it a little less error prone.
 
-### Creating a test for easier bisecting
+## Creating a test for easier bisecting
 
 Now I'll add a test, like I should have before starting the refactor. I am very guilty of this in the real world as well, and you should seriously always have tests if you are refactoring all but the simplest of codebases. Besides the obvious benefits, it really lifts some anxiety from your shoulders when you have a thorough test suite around code you are changing. So let us make the simplest test!
 
@@ -268,7 +268,7 @@ Or do we even have to do that...?
 
 <!-- try out `git bisect run npm test` -->
 
-### Automating bisect with a test script
+## Automating bisect with a test script
 
 I hope you stuck around, or scrolled to the bottom, for this part. It is just majestic, and I only learned of it today while writing this article. While I was going back and linking to the tweets, I found that more discussion had happened since I read the original and there was something very exciting waiting for me:
 
@@ -286,7 +286,7 @@ The exit codes from the test passing or failing will tell git which commits are 
   <source src="../images/git-bisect-automated.webm" type="video/webm">
 </video>
 
-### Conclusion
+## Conclusion
 
 I know this was a long article, but it took me a while to discover how to use this feature properly, and to have some sort of example to try it out, so I'm hoping this is comprehensive enough for anyone who is brand new to the idea like I was.
 

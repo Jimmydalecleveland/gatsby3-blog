@@ -10,7 +10,7 @@ We should all be looking out for our users when it comes to JavaScript bundle si
 
 I'm using a [repo for starting new projects](https://github.com/Jimmydalecleveland/webpack4-setups/tree/react) that I created a while back as the codebase for this experiment. Not necessary to look at, but in case you want a reference point for your own testing. I'm using the `react` branch because we'll be analyzing a React bundle.
 
-### Webpack Visualizer
+## Webpack Visualizer
 
 This is a browser app that lets you drop in a json file of your webpack build and turns it into an interactive chart. Here's what my starting bundle looks like through the tool.
 
@@ -41,7 +41,7 @@ Then you just go to [the Webpack Visualizer website](https://chrisbateman.github
 
 The default name and size shown in the center circle is your whole bundle if you have a single output file; in my case that's `main.js`. You can see that `main.js` is 103.8k in actual size (non-gzipped). I wondered what exactly the rest of these colored circles represented when I first encountered it so I'll give a quick description before moving on.
 
-### Webpack Visualizer Breakdown
+## Webpack Visualizer Breakdown
 
 You can see that when I hover the innermost blue band, "node_modules" shows up in the center, and a thin sliver in the north becomes a lower opacity. This is to represent that `node_modules` is part of the `main.js` file, and includes all the non transparent bands within it. This is the same gif as the previous one, just placed here for easier reference while I discuss it.
 
@@ -57,7 +57,7 @@ Summed up, whatever you are hovering keeps everything that is a descendant of it
 
 Finally, you can see the "src" chunk in the northern area is quite small (0.8%), and that's my actual code (in the `src` directory of my project). This is a minimal example of Webpack and React so that is what we'd expect. Pretty nice tool, eh?
 
-### An Alternative to Webpack Visualizer
+## An Alternative to Webpack Visualizer
 
 A nice alternative tool is the package [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) package. The UI can be a little wonky but it has some cool features _and_ you can run the exact same script, without dropping the `.json` output file in a browser every time you build. It actually auto-opens a new browser window with a localhost page. Here's an example of what it looks like for the same `main.js` bundle we've seen so far.
 
@@ -102,7 +102,7 @@ module.exports = {
 
 You can run the same script as before (`yarn stats` for me) to start up the local server.
 
-### Expermimenting with imports
+## Expermimenting with imports
 
 To dig in deeper, I installed `emotion-icons` which requires `@emotion/core` and `@emotion/styled` to work. I'm using `emotion` as the CSS-in-JS solution for another project I'm working on, so this package is a logical fit for my case.
 
@@ -161,7 +161,7 @@ const App = () => (
 );
 ```
 
-### Multiple Named Imports
+## Multiple Named Imports
 
 Let us see what happens when we import say... 10 icons.
 
@@ -236,7 +236,7 @@ Which results in:
 
 Back to the original bundle size with no icons being imported at all. Now that that sanity check is taken care of, let's get crazy.
 
-### Load all the icons
+## Load all the icons
 
 I had to get a little creative here, but this is how I loaded every icon in the package:
 
@@ -284,6 +284,6 @@ But it did work! and here is the visualized bundle.
 
 Wow! 580.68 KB in just the `emotion-icons` package now. I, of course, removed the `.map` to see if the `import * as Material` would still be ignored in the final bundle, and it was. An interesting side note, though. If you even `console.log` the import, it will add the whole package to the bundle, like you see in the previous screenshot.
 
-### Conclusions
+## Conclusions
 
 It's really cool to see modern tooling working in such an efficient way. I take it for granted most days, but doing little exercises like this really make me appreciate all the great work the open source community has contributed to better DX and UX. I still have some further testing to do, but this is where I'll wrap up this post. I hope anyone who is crazy enough to read the whole article will be inspired to do some testing of their own to make their current/future sites a snappier experience.
