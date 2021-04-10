@@ -28,10 +28,10 @@ const Template = ({ data }) => {
       <div className="hero-image">
         <GatsbyImage
           image={image}
-          alt="pointless featured image for post"
+          alt="Aesthetic fluff image for post. Not partricularly relevant to content."
         />
         <Link to="/">
-          <img className="main-logo" src={swcLogo} alt="Swashbuckling with Code Logo" />
+          <img className="main-logo" src={swcLogo} alt="Swashbuckling with Code text with flourish decorations and rapier in background" />
         </Link>
         {frontmatter.attributionName && (
           <a
