@@ -19,8 +19,10 @@ const Layout = styled.main`
 
   > .main-logo {
     grid-column: 2 / 3;
-    margin: 0 auto;
-    max-width: 300px;
+    margin: 22px auto;
+    width: 300px;
+    height: 154px;
+    max-width: 100%;
   }
 
   > figure {
@@ -65,6 +67,7 @@ const Layout = styled.main`
       left: ${({ theme }) => theme.space.$2};
       top: ${({ theme }) => theme.space.$2};
       width: 120px;
+      height: 103px;
       filter: drop-shadow(rgb(14, 25, 44) 5px 4px 4px);
     }
 
@@ -115,13 +118,12 @@ const Layout = styled.main`
         left: ${({ theme }) => theme.space.$4};
         top: ${({ theme }) => theme.space.$4};
         width: 200px;
+        height: 103px;
       }
     }
 
     > .main-logo {
       grid-column: 3 / 4;
-      margin: 0 auto;
-      max-width: 300px;
     }
 
     .full-width {

@@ -47,7 +47,6 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
       <img
         className="main-logo"
         src={swcLogo}
-        style={{ margin: "1.5rem auto" }}
       />
       <Typography as="h2" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland
