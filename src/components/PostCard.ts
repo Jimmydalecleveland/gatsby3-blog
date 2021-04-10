@@ -4,7 +4,7 @@ const PostCard = styled.div`
   margin-bottom: 1.5rem;
   cursor: pointer;
 
-  h4 {
+  h3 {
     margin: 0 0 0.2em;
   }
 

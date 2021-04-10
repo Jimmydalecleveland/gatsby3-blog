@@ -64,7 +64,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
           <Link key={slug} to={slug} className="unstyle">
             <PostCard>
               <div className="text">
-                <Typography as="h4">{title}</Typography>
+                <Typography as="h3">{title}</Typography>
                 <Typography>{excerpt}</Typography>
               </div>
               <div className="image-wrapper">
