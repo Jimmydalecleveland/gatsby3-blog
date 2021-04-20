@@ -62,16 +62,16 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => (
       }
 
       p {
-        margin: 0 0 8px;
+        margin: 0 0 ${theme.space.$4};
 
         code {
-          background-color: ${theme.colors.$bgc};
-          border: solid 1px #364663;
-          padding: 0.1em 0.3em;
-          border-radius: 4px;
-          color: #6df;
           font-size: ${theme.fontSizes.$1};
         }
+      }
+
+      pre {
+        /* gatsby adds it's own wrapper to code snippets */
+        margin: 0;
       }
 
       a {
