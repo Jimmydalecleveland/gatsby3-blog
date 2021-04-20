@@ -62,11 +62,11 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
         const image = getImage(featuredImage);
 
         return (
-          <Link key={slug} to={slug} className="unstyle">
+          <Link key={slug} to={slug} className="postcard-wrapper unstyle">
             <PostCard>
               <div className="text">
                 <Typography as="h3">{title}</Typography>
-                <Typography>{excerpt}</Typography>
+                <Typography>{description || excerpt}</Typography>
               </div>
               <div className="image-wrapper">
                 <GatsbyImage
