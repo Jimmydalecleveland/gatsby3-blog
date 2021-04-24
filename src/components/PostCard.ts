@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const PostCard = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 42px;
   cursor: pointer;
 
   h3 {
@@ -20,6 +20,7 @@ const PostCard = styled.div`
 
   .image-wrapper {
     display: none;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {

@@ -12,7 +12,7 @@ const Layout = styled.main`
   > * {
     grid-column: 2 / 3;
   }
-
+  
   > main {
     grid-column: 1 / -1;
   }
@@ -45,6 +45,10 @@ const Layout = styled.main`
       // Gatsby image adds a white box-shadow for some reason
       box-shadow: none !important;
     }
+  }
+  
+  .postcard-wrapper {
+    grid-column: 2 / 5;
   }
 
   .hero-image {
@@ -96,7 +100,7 @@ const Layout = styled.main`
   }
 
   .gatsby-highlight {
-    margin: ${({ theme }) => theme.space.$5} 0;
+    margin: ${({ theme }) => theme.space.$3} 0 ${({ theme }) => theme.space.$5};
     grid-column: 2 / 3;
     width: 100%;
   }
