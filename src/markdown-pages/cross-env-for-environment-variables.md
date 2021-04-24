@@ -14,7 +14,7 @@ If you're working with JavaScript, particularly Node, in Windows you might have 
 operable program or batch file
 ```
 
-The term `NODE_ENV` might be substituted with something else, but the essence of the problem is that some code is trying to set an environment variable in a non-windowsy way. This most common culprit I've seen is NPM scripts. Something that looks similar to this snippit in a `package.json` file:
+The term `NODE_ENV` might be substituted with something else, but the essence of the problem is that some code is trying to set an environment variable in a non-windowsy way. The most common culprit I've seen is NPM scripts. Something that looks similar to this snippet in a `package.json` file:
 
 ```json
 "scripts": {
@@ -22,7 +22,7 @@ The term `NODE_ENV` might be substituted with something else, but the essence of
 }
 ```
 
-On Mac OS, and Linux, this is a very common way to set environment variables, but we need to make a small tweak for this to work on Windows (unless you are using Bash on Windows or another substitute).
+On Mac OS and Linux this is a very common way to set environment variables, but we need to make a small tweak for this to work on Windows (unless you are using Bash on Windows or another substitute).
 
 _**Note:** You could use `--mode=production` as a flag for Webpack in particular, but this is just a general common example._
 
@@ -42,13 +42,11 @@ We'll see why this isn't the best way to handle this in a moment, but just to ge
 }
 ```
 
-The `build` script above has some small changes that are very important. The most obvious is the addition of the `set` keyword at the beginning of the script. This is how you set an environment variable on Windows. The second, more subtle change, is the `&` appended to the envrionment variable declaration.
+The `build` script above has some small changes that are very important. The most obvious is the addition of the `set` keyword at the beginning of the script. This is how you set an environment variable on Windows. The second, more subtle change, is the `&` appended to the environment variable declaration.
 
 This `&` is necessary to tell Windows we want to move on to running another command after setting the variable, very similar to the:
 
-`npm run build && npm serve` format you commonly see in scripts
-
----
+`npm run build && npm serve` format you commonly see in scripts.
 
 **IMPORTANT**: It is not a mistake that there is no space between `production` and `&`. If you were to put a space there, it would set the environment variable to the string `"production "` with a space at the end.
 
@@ -56,7 +54,7 @@ This `&` is necessary to tell Windows we want to move on to running another comm
 
 You could stop here in many situations but you have two potential problems before you.
 
-First, anyone using your project on a non-windows machine essentially has the same problem you just fixed for yourself.
+First, anyone using your project on a non-Windows machine essentially has the same problem you just fixed for yourself.
 
 Second, and perhaps more impacting to you, is that any server your scripts run on are likely going to be Linux machines. This means when you deploy your code to your server, none of your scripts will run. Some people opt to just write separate scripts, which works but is a bit clunkier than the common solution, imo.
 
