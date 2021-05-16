@@ -2,50 +2,50 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.swashbucklingwithcode.com",
     author: "Jimmy Cleveland",
-    title: 'Swashbuckling with Code',
+    title: "Swashbuckling with Code",
     description:
-      'A place where I can write down things I have learned for myself and others to reference',
+      "A place where I can write down things I have learned for myself and others to reference",
   },
   plugins: [
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Swashbuckling with Code',
-        short_name: 'SwCblog',
-        start_url: '/',
-        background_color: '#0e192c',
-        theme_color: '#0e192c',
-        display: 'minimal-ui',
-        icon: 'src/images/jdc-logo.png',
+        name: "Swashbuckling with Code",
+        short_name: "SwCblog",
+        start_url: "/",
+        background_color: "#0e192c",
+        theme_color: "#0e192c",
+        display: "minimal-ui",
+        icon: "src/images/jdc-logo.png",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
-        path: './src/pages/'
+        name: "pages",
+        path: "./src/pages/",
       },
-      __key: 'pages'
+      __key: "pages",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'markdown-pages',
-        path: './src/markdown-pages/'
+        name: "markdown-pages",
+        path: "./src/markdown-pages/",
       },
-      __key: 'markdown'
+      __key: "markdown",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
-        path: './src/images/'
+        name: "images",
+        path: "./src/images/",
       },
-      __key: 'images'
+      __key: "images",
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -63,13 +63,14 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
         ],
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-  ]
-}
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-offline",
+  ],
+};
