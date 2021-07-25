@@ -5,8 +5,10 @@ export const theme: Theme = {
     $bgc: "#0e192c",
     $bodyText: "#bff0ff",
     $textStandout: "#74ffff",
+    $textSecondary: "#ffc3b0",
     $highlight: "#32d2d0",
     $desaturated: "#b4dede",
+    $highlightSecondary: "#e4b9ac",
   },
   space: {
     $1: "4px",

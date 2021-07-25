@@ -6,7 +6,9 @@ declare module "@emotion/react" {
       $bgc: string;
       $bodyText: string;
       $textStandout: string;
+      $textSecondary: string;
       $highlight: string;
+      $highlightSecondary: string;
       $desaturated: string;
     };
     space: {
