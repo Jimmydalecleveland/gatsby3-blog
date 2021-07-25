@@ -99,7 +99,7 @@ export const homePageQuery = graphql`
           frontmatter {
             title
             description
-            date
+            date(formatString: "MMM DD, YYYY")
             featuredImage {
               childImageSharp {
                 gatsbyImageData(
