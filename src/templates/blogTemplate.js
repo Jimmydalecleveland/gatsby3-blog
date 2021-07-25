@@ -1,17 +1,16 @@
-import * as React from 'react'
+import * as React from "react";
 import { Helmet } from "react-helmet";
-import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import swcLogo from "../images/swc-logo.svg";
 import Layout from "../components/Layout";
 import Typography from "../components/Typography";
 
 const Template = ({ data }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, fields, html } = markdownRemark
-  const image = getImage(frontmatter.featuredImage)
-  console.log({ ...frontmatter })
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, fields, html } = markdownRemark;
+  const image = getImage(frontmatter.featuredImage);
 
   return (
     <Layout as="article" itemType="http://schema.org/Article">
@@ -22,7 +21,10 @@ const Template = ({ data }) => {
           content={`A blog post on the topic of: ${frontmatter.title}`}
         />
         <title>SwC - {frontmatter.title}</title>
-        <link rel="canonical" href={`https://blog.jimmydc.com/${fields.slug}/`} />
+        <link
+          rel="canonical"
+          href={`https://blog.jimmydc.com/${fields.slug}/`}
+        />
       </Helmet>
 
       <div className="hero-image">
@@ -31,7 +33,11 @@ const Template = ({ data }) => {
           alt="Aesthetic fluff image for post. Not partricularly relevant to content."
         />
         <Link to="/">
-          <img className="main-logo" src={swcLogo} alt="Swashbuckling with Code text with flourish decorations and rapier in background" />
+          <img
+            className="main-logo"
+            src={swcLogo}
+            alt="Swashbuckling with Code text with flourish decorations and rapier in background"
+          />
         </Link>
         {frontmatter.attributionName && (
           <a
@@ -51,11 +57,11 @@ const Template = ({ data }) => {
       </header>
       <Layout dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {
@@ -68,12 +74,15 @@ export const pageQuery = graphql`
         attributionLink
         featuredImage {
           childImageSharp {
-            gatsbyImageData(transformOptions: { fit: COVER }, layout: FULL_WIDTH)
+            gatsbyImageData(
+              transformOptions: { fit: COVER }
+              layout: FULL_WIDTH
+            )
           }
         }
       }
     }
   }
-`
+`;
 
-export default Template
+export default Template;

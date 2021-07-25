@@ -27,6 +27,7 @@ interface BlogPost {
     frontmatter: {
       title: string;
       description: string;
+      date: string;
       featuredImage: IGatsbyImageData;
     };
   };
@@ -57,7 +58,7 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
         const {
           excerpt,
           fields: { slug },
-          frontmatter: { title, description, featuredImage },
+          frontmatter: { title, description, featuredImage, date },
         } = node;
         const image = getImage(featuredImage);
 
@@ -66,7 +67,8 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
             <PostCard>
               <div className="text">
                 <Typography as="h3">{title}</Typography>
-                <Typography>{description || excerpt}</Typography>
+                <Typography as="span" className="date">{date}</Typography>
+                <Typography style={{ margin: 0 }}>{description || excerpt}</Typography>
               </div>
               <div className="image-wrapper">
                 <GatsbyImage
@@ -97,13 +99,14 @@ export const homePageQuery = graphql`
           frontmatter {
             title
             description
+            date
             featuredImage {
               childImageSharp {
                 gatsbyImageData(
                   transformOptions: { fit: COVER }
                   layout: FIXED
                   width: 200
-                  height: 100
+                  height: 132
                 )
               }
             }
