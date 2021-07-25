@@ -12,7 +12,7 @@ const Layout = styled.main`
   > * {
     grid-column: 2 / 3;
   }
-  
+
   > main {
     grid-column: 1 / -1;
   }
@@ -44,11 +44,12 @@ const Layout = styled.main`
       border-radius: 8px;
       // Gatsby image adds a white box-shadow for some reason
       box-shadow: none !important;
+      width: 100%;
     }
   }
-  
+
   .postcard-wrapper {
-    grid-column: 2 / 5;
+    grid-column: 2 / 3;
   }
 
   .hero-image {
@@ -124,6 +125,10 @@ const Layout = styled.main`
         width: 200px;
         height: 103px;
       }
+    }
+
+    .postcard-wrapper {
+      grid-column: 2 / 5;
     }
 
     > .main-logo {
