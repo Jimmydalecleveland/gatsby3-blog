@@ -67,8 +67,12 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
             <PostCard>
               <div className="text">
                 <Typography as="h3">{title}</Typography>
-                <Typography as="span" className="date">{date}</Typography>
-                <Typography style={{ margin: 0 }}>{description || excerpt}</Typography>
+                <Typography as="span" className="date">
+                  {date}
+                </Typography>
+                <Typography style={{ margin: 0 }}>
+                  {description || excerpt}
+                </Typography>
               </div>
               <div className="image-wrapper">
                 <GatsbyImage
@@ -104,6 +108,7 @@ export const homePageQuery = graphql`
               childImageSharp {
                 gatsbyImageData(
                   transformOptions: { fit: COVER }
+                  placeholder: BLURRED
                   layout: FIXED
                   width: 200
                   height: 132
