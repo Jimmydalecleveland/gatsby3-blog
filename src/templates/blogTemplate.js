@@ -76,6 +76,7 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(
               transformOptions: { fit: COVER }
+              placeholder: BLURRED
               layout: FULL_WIDTH
             )
           }
