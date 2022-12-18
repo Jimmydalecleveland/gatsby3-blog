@@ -3,7 +3,7 @@ title: "Bisecting as a troubleshooting technique, and how Git makes it even bett
 date: "2020-05-03"
 description: "I recently learned the name of a technique I use to troubleshoot particularly tricky bugs: bisecting. From learning that name I was able to discover git bisect which has changed my debugging world."
 category: "Trinkets and Baubles"
-featuredImage: "../images/strawberry-cake.jpg"
+featuredImage: "../images/banner3.png"
 ---
 
 If you are more of a visual learner, I have a companion video covering general points in this article:

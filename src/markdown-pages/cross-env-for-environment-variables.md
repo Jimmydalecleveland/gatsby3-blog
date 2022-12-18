@@ -2,9 +2,7 @@
 title: "How to use environment variables in NPM scripts safely across operating systems"
 date: "2021-04-20"
 description: "If you've ever been stuck on `NODE_ENV is not recognized` while developing on Windows, this post is for you."
-featuredImage: "../images/markus-winkler-plug-on-orange.jpg"
-attributionName: "Markus Winkler"
-attributionLink: "https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+featuredImage: "../images/banner2.png"
 ---
 
 If you're working with JavaScript, particularly Node, in Windows you might have come across this error before:

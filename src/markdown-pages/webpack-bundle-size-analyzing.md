@@ -3,7 +3,7 @@ title: "Analyzing JS Bundle Size with Webpack Visualizers"
 date: "2019-11-13"
 description: "A bundle visualizer can be a very handy tool for tracking down packages, or even your own code, for large file size offenders"
 category: "Arcane Mysteries"
-featuredImage: "../images/ring-of-favor.jpg"
+featuredImage: "../images/banner1.png"
 ---
 
 We should all be looking out for our users when it comes to JavaScript bundle size, as page load speed is a critical component of good UX. A bundle visualizer can be a very handy tool for tracking down packages, or even your own code, for large file size offenders. I'm going to talk about two visualizers, and a little journey I went on today to explore exactly when Webpack adds a package to the bundle.
