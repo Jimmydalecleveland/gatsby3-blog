@@ -70,16 +70,24 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
                 <Typography as="span" className="date">
                   {date}
                 </Typography>
-                <Typography style={{ margin: 0 }}>
+                <Typography style={{ 
+                  margin: 0, 
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  WebkitLineClamp: 2,
+                  overflow: "hidden",
+                }}>
                   {description || excerpt}
                 </Typography>
               </div>
               <div className="image-wrapper">
-                <GatsbyImage
-                  image={image}
-                  className="image"
-                  alt="blog post featured image"
-                />
+                {image && (
+                  <GatsbyImage
+                    image={image}
+                    className="image"
+                    alt="blog post featured image"
+                  />
+                )}
               </div>
             </PostCard>
           </Link>
