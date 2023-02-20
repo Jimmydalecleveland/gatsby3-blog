@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { PageProps, graphql, Link } from "gatsby";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { graphql, Link, PageProps } from "gatsby";
 
 import swcLogo from "../images/swc-logo.svg";
 import LayoutGrid from "../components/Layout";
 import Typography from "../components/Typography";
-import PostCard from "../components/PostCard";
+import Search from "../components/Search";
+import type { BlogPost } from "../../@types/global";
 
 interface BlogIndexProps extends PageProps {
   data: AllPostsQuery;
@@ -18,23 +18,9 @@ interface AllPostsQuery {
   };
 }
 
-interface BlogPost {
-  node: {
-    excerpt: string;
-    fields: {
-      slug: string;
-    };
-    frontmatter: {
-      title: string;
-      description: string;
-      date: string;
-      featuredImage: IGatsbyImageData;
-    };
-  };
-}
-
-const Index: React.FC<BlogIndexProps> = ({ data }) => {
+const Chat: React.FC<BlogIndexProps> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
+  console.log(data);
 
   return (
     <LayoutGrid>
@@ -54,34 +40,15 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
         A coding blog by Jimmy Cleveland
       </Typography>
 
-      {posts.map(({ node }) => {
-        const {
-          excerpt,
-          fields: { slug },
-          frontmatter: { title, description, featuredImage, date },
-        } = node;
-        const image = getImage(featuredImage);
-
-        return (
-          <PostCard
-            key={slug}
-            slug={slug}
-            title={title}
-            date={date}
-            description={description}
-            excerpt={excerpt}
-            image={image}
-          />
-        );
-      })}
+      <Search posts={posts} />
     </LayoutGrid>
   );
 };
 
-export default Index;
+export default Chat;
 
-export const homePageQuery = graphql`
-  query HomePageQuery {
+export const chatPageQuery = graphql`
+  query ChatPageQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
@@ -90,6 +57,7 @@ export const homePageQuery = graphql`
             slug
           }
           frontmatter {
+            slug
             title
             description
             date(formatString: "MMM DD, YYYY")

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const PostCard = styled.div`
+export const PostCard = styled.div`
   margin-bottom: ${({ theme }) => theme.space.$5};
   cursor: pointer;
 
@@ -65,5 +65,3 @@ const PostCard = styled.div`
     }
   }
 `;
-
-export default PostCard;
