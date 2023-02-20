@@ -1,4 +1,5 @@
 ---
+slug: "/mock-asynchronous-functions-with-jest/"
 title: "Mocking asynchronous functions with Jest"
 date: "2020-06-16"
 description: "Mocking is a fundamental skill in testing. It allows you to avoid testing parts of your code that are outside your control, or to get reliable return values from said code."

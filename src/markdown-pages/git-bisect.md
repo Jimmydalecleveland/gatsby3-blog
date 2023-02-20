@@ -1,4 +1,5 @@
 ---
+slug: "/git-bisect/"
 title: "Bisecting as a troubleshooting technique, and how Git makes it even better"
 date: "2020-05-03"
 description: "I recently learned the name of a technique I use to troubleshoot particularly tricky bugs: bisecting. From learning that name I was able to discover git bisect which has changed my debugging world."

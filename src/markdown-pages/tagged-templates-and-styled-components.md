@@ -1,4 +1,5 @@
 ---
+slug: "/tagged-templates-and-styled-components/"
 title: "Tagged templates and understanding Styled Component syntax"
 date: "2019-08-18"
 description: "Throughout this article I'm going to cover what Tagged Templates are and how you can write a simplified foundation of a Styled Component function to better understand the syntax."
