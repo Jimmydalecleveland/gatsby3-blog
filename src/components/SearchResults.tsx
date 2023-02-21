@@ -47,7 +47,7 @@ const SearchResults = ({ posts, response, sources }: SearchResultsProps) => {
       <Markdown>{response}</Markdown>
       {sources.length > 0 && (
         <div>
-          <h3>Sources:</h3>
+          <h2>Sources:</h2>
           {sources.map((source) => (
             <PostFromSlug posts={posts} key={source} slug={source} />
           ))}

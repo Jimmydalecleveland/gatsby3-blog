@@ -31,11 +31,13 @@ const Chat: React.FC<BlogIndexProps> = ({ data }) => {
         <link rel="canonical" href="https://blog.jimmydc.com/" />
       </Helmet>
 
-      <img
-        className="main-logo"
-        src={swcLogo}
-        alt="Swashbuckling with Code text with flourish decorations and rapier in background"
-      />
+      <Link to="/" className="no-underline center-text">
+        <img
+          className="main-logo"
+          src={swcLogo}
+          alt="Swashbuckling with Code text with flourish decorations and rapier in background"
+        />
+      </Link>
       <Typography as="h2" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland
       </Typography>
