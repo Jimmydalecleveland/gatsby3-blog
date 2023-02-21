@@ -50,7 +50,7 @@ const Search = ({ posts }: SearchProps) => {
         development knowledge. This digital buccaneer is always at the ready to
         help ye navigate the rough seas of web development!
       </p>
-      <p>Here be some query suggestions for ye, matey:</p>
+      <p>Here be some example query suggestions for ye, matey:</p>
       <ul>
         <li>
           <a

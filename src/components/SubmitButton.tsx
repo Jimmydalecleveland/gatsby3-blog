@@ -48,11 +48,11 @@ export const SubmitButton = styled.button`
 
 export const SubmitButtonGlow = styled.div`
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 20px;
-  z-index: 1;
-  filter: blur(30px);
-  opacity: 0.8;
+  z-index: -1;
+  filter: blur(32px);
+  opacity: 0.6;
 
   &.loading {
     ${buttonStyles}
