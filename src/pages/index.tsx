@@ -53,6 +53,9 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
       <Typography as="h2" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland
       </Typography>
+      <Typography center>
+        <Link to="/ai-chat">Try the NEW, AI-powered, chat!</Link>
+      </Typography>
 
       {posts.map(({ node }) => {
         const {
