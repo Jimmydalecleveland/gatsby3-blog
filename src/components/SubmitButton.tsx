@@ -42,6 +42,7 @@ const buttonStyles = css`
 
 export const SubmitButton = styled.button`
   position: relative;
+  cursor: pointer;
   ${buttonStyles}
 `;
 

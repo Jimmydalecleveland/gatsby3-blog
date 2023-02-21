@@ -10,12 +10,14 @@ interface SearchProps {
 }
 
 const Search = ({ posts }: SearchProps) => {
+  const [isLoading, setIsLoading] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [searchResults, setSearchResults] =
     React.useState<SearchResultsProps | null>(null);
 
   const askChat = async (query: string) => {
     setSearchResults(null);
+    setIsLoading(true);
     const result = await fetch(
       "https://flask-production-f494.up.railway.app/chat",
       {
@@ -27,6 +29,7 @@ const Search = ({ posts }: SearchProps) => {
       }
     ).then((res) => res.json());
 
+    setIsLoading(false);
     setSearchResults(result);
   };
 
@@ -97,9 +100,13 @@ const Search = ({ posts }: SearchProps) => {
           onChange={handleChange}
           placeholder="type your question here..."
         />
-        <SubmitButton type="submit">
-          SUBMIT
-          <SubmitButtonGlow />
+        <SubmitButton
+          type="submit"
+          className={isLoading ? "loading" : ""}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Ask Question"}
+          <SubmitButtonGlow className={isLoading ? "loading" : ""} />
         </SubmitButton>
       </form>
       {searchResults && (
