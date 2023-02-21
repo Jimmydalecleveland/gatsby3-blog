@@ -1,9 +1,28 @@
 import * as React from "react";
 
 import Markdown from "markdown-to-jsx";
+import Prism from "prismjs";
 import { getImage } from "gatsby-plugin-image";
 import PostCard from "./PostCard";
 import type { BlogPost } from "../../@types/global";
+
+const Code = ({ language = "javascript", children }) => {
+  const html = Prism.highlight(children, Prism.languages[language], language);
+  return <code dangerouslySetInnerHTML={{ __html: html }} />;
+};
+
+const Pre = ({ children }) => (
+  <div className="gatsby-highlight">
+    <pre>{children}</pre>
+  </div>
+);
+
+const options = {
+  overrides: {
+    code: { component: Code },
+    pre: { component: Pre },
+  },
+};
 
 const PostFromSlug = ({
   posts = [],
@@ -44,7 +63,7 @@ export interface SearchResultsProps {
 const SearchResults = ({ posts, response, sources }: SearchResultsProps) => {
   return (
     <div>
-      <Markdown>{response}</Markdown>
+      <Markdown options={options}>{response}</Markdown>
       {sources.length > 0 && (
         <div>
           <h2>Sources:</h2>
