@@ -3,6 +3,7 @@ import { BlogPost } from "../../@types/global";
 import SearchBox from "./SearchBox";
 import SearchResults from "./SearchResults";
 import type { SearchResultsProps } from "./SearchResults";
+import { SubmitButton, SubmitButtonGlow } from "./SubmitButton";
 
 interface SearchProps {
   posts: BlogPost[];
@@ -81,13 +82,25 @@ const Search = ({ posts }: SearchProps) => {
           </a>
         </li>
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          margin: "48px 0",
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+          alignItems: "center",
+        }}
+      >
         <SearchBox
           value={searchValue}
           onChange={handleChange}
           placeholder="type your question here..."
         />
-        <button type="submit">Search</button>
+        <SubmitButton type="submit">
+          SUBMIT
+          <SubmitButtonGlow />
+        </SubmitButton>
       </form>
       {searchResults && (
         <SearchResults
