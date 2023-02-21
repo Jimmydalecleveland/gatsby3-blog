@@ -4,30 +4,39 @@ import SearchBox from "./SearchBox";
 import SearchResults from "./SearchResults";
 import type { SearchResultsProps } from "./SearchResults";
 import { SubmitButton, SubmitButtonGlow } from "./SubmitButton";
+import { CHAT_BASE_URL } from "../../config";
+import { ToggleButton } from "./ToggleButton";
 
 interface SearchProps {
   posts: BlogPost[];
 }
+
+type ChatRoute = "chat" | "chat-sans-sources";
+type ChatIndex = "prompted-with-sources" | "prompted-sans-sources";
+const chatIndexMap: Record<ChatIndex, ChatRoute> = {
+  "prompted-with-sources": "chat",
+  "prompted-sans-sources": "chat-sans-sources",
+};
 
 const Search = ({ posts }: SearchProps) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [searchResults, setSearchResults] =
     React.useState<SearchResultsProps | null>(null);
+  const [chatIndex, setChatIndex] = React.useState<ChatIndex>(
+    "prompted-sans-sources"
+  );
 
   const askChat = async (query: string) => {
     setSearchResults(null);
     setIsLoading(true);
-    const result = await fetch(
-      "https://flask-production-f494.up.railway.app/chat",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query }),
-      }
-    ).then((res) => res.json());
+    const result = await fetch(`${CHAT_BASE_URL}/${chatIndexMap[chatIndex]}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    }).then((res) => res.json());
 
     setIsLoading(false);
     setSearchResults(result);
@@ -78,13 +87,32 @@ const Search = ({ posts }: SearchProps) => {
           <a
             href="#example3"
             onClick={() =>
-              askChat("I need help reducing my webpack bundle size")
+              askChat("can you give me an example of useContext for React")
             }
           >
-            I need help reducing my webpack bundle size
+            can you give me an example of useContext for React
           </a>
         </li>
       </ul>
+
+      <span>You can select the indexing type to use (demo purposes):</span>
+      <div style={{ display: "flex", gap: "10px" }}>
+        <ToggleButton
+          type="button"
+          onClick={() => setChatIndex("prompted-with-sources")}
+          className={chatIndex === "prompted-with-sources" ? "active" : ""}
+        >
+          with prompt and sources
+        </ToggleButton>
+        <ToggleButton
+          type="button"
+          onClick={() => setChatIndex("prompted-sans-sources")}
+          className={chatIndex === "prompted-sans-sources" ? "active" : ""}
+        >
+          with prompt and no sources
+        </ToggleButton>
+      </div>
+
       <form
         onSubmit={handleSubmit}
         style={{

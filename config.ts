@@ -1,0 +1,1 @@
+export const CHAT_BASE_URL="https://flask-production-f494.up.railway.app"

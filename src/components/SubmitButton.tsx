@@ -36,7 +36,7 @@ const buttonStyles = css`
   background-size: 600%;
 
   &.loading {
-    animation: ${gradient} 10s linear infinite;
+    animation: ${gradient} 15s linear infinite;
   }
 `;
 
