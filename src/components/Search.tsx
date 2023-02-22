@@ -24,7 +24,7 @@ const Search = ({ posts }: SearchProps) => {
   const [searchResults, setSearchResults] =
     React.useState<SearchResultsProps | null>(null);
   const [chatIndex, setChatIndex] = React.useState<ChatIndex>(
-    "prompted-sans-sources"
+    "prompted-with-sources"
   );
 
   const askChat = async (query: string) => {
