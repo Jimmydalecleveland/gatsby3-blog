@@ -11,11 +11,13 @@ interface SearchProps {
   posts: BlogPost[];
 }
 
-type ChatRoute = "chat" | "chat-sans-sources";
-type ChatIndex = "prompted-with-sources" | "prompted-sans-sources";
+type ChatRoute = "chat" | "chat-sans-sources" | "chat2";
+type ChatIndex = "simple-prompt" | "simple-sans-sources" | "stricter-prompt";
+
 const chatIndexMap: Record<ChatIndex, ChatRoute> = {
-  "prompted-with-sources": "chat",
-  "prompted-sans-sources": "chat-sans-sources",
+  "simple-prompt": "chat",
+  "stricter-prompt": "chat2",
+  "simple-sans-sources": "chat-sans-sources",
 };
 
 const Search = ({ posts }: SearchProps) => {
@@ -23,9 +25,8 @@ const Search = ({ posts }: SearchProps) => {
   const [searchValue, setSearchValue] = React.useState("");
   const [searchResults, setSearchResults] =
     React.useState<SearchResultsProps | null>(null);
-  const [chatIndex, setChatIndex] = React.useState<ChatIndex>(
-    "prompted-with-sources"
-  );
+  const [chatIndex, setChatIndex] =
+    React.useState<ChatIndex>("stricter-prompt");
 
   const askChat = async (query: string) => {
     setSearchResults(null);
@@ -99,17 +100,24 @@ const Search = ({ posts }: SearchProps) => {
       <div style={{ display: "flex", gap: "10px" }}>
         <ToggleButton
           type="button"
-          onClick={() => setChatIndex("prompted-with-sources")}
-          className={chatIndex === "prompted-with-sources" ? "active" : ""}
+          onClick={() => setChatIndex("simple-prompt")}
+          className={chatIndex === "simple-prompt" ? "active" : ""}
         >
-          with prompt and sources
+          simple prompt
         </ToggleButton>
         <ToggleButton
           type="button"
-          onClick={() => setChatIndex("prompted-sans-sources")}
-          className={chatIndex === "prompted-sans-sources" ? "active" : ""}
+          onClick={() => setChatIndex("stricter-prompt")}
+          className={chatIndex === "stricter-prompt" ? "active" : ""}
         >
-          with prompt and no sources
+          stricter prompt
+        </ToggleButton>
+        <ToggleButton
+          type="button"
+          onClick={() => setChatIndex("simple-sans-sources")}
+          className={chatIndex === "simple-sans-sources" ? "active" : ""}
+        >
+          simple with no sources
         </ToggleButton>
       </div>
 
