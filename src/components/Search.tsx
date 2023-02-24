@@ -30,6 +30,7 @@ const Search = ({ posts }: SearchProps) => {
 
   const askChat = async (query: string) => {
     setSearchResults(null);
+    setSearchValue(query);
     setIsLoading(true);
     const result = await fetch(`${CHAT_BASE_URL}/${chatIndexMap[chatIndex]}`, {
       method: "POST",
