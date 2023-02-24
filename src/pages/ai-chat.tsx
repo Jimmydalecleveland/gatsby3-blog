@@ -7,6 +7,7 @@ import LayoutGrid from "../components/Layout";
 import Typography from "../components/Typography";
 import Search from "../components/Search";
 import type { BlogPost } from "../../@types/global";
+import Layout from "../components/Layout";
 
 interface BlogIndexProps extends PageProps {
   data: AllPostsQuery;
@@ -23,7 +24,7 @@ const Chat: React.FC<BlogIndexProps> = ({ data }) => {
   console.log(data);
 
   return (
-    <LayoutGrid>
+    <Layout>
       <Helmet>
         <html lang="en" />
         <meta name="description" content="Jimmy Cleveland's Coding Blog" />
@@ -43,7 +44,7 @@ const Chat: React.FC<BlogIndexProps> = ({ data }) => {
       </Typography>
 
       <Search posts={posts} />
-    </LayoutGrid>
+    </Layout>
   );
 };
 

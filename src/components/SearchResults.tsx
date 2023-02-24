@@ -18,6 +18,7 @@ const Pre = ({ children }) => (
 );
 
 const options = {
+  wrapper: React.Fragment,
   overrides: {
     code: { component: Code },
     pre: { component: Pre },
@@ -62,17 +63,17 @@ export interface SearchResultsProps {
 
 const SearchResults = ({ posts, response, sources }: SearchResultsProps) => {
   return (
-    <div>
+    <>
       <Markdown options={options}>{response}</Markdown>
       {sources.length > 0 && (
-        <div>
+        <>
           <h2>Sources:</h2>
           {sources.map((source) => (
             <PostFromSlug posts={posts} key={source} slug={source} />
           ))}
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 

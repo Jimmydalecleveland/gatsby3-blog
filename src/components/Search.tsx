@@ -53,7 +53,7 @@ const Search = ({ posts }: SearchProps) => {
   };
 
   return (
-    <div>
+    <>
       <p>
         Ahoy there, matey! I be the AI chat with the personality of a pirate,
         ready to help ye find any answer ye seek in this treasure trove of web
@@ -152,7 +152,7 @@ const Search = ({ posts }: SearchProps) => {
           sources={searchResults.sources}
         />
       )}
-    </div>
+    </>
   );
 };
 
