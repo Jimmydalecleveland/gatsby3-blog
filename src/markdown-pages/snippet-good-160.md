@@ -1,4 +1,5 @@
 ---
+slug: "/snippet-good-160/"
 title: "v1.6.0 release of JS Snippet Good VSCode Extension"
 date: "2020-02-08"
 description: "JS - Snippet Good! now has React Hook snippets!"

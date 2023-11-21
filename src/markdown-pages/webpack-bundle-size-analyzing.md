@@ -1,4 +1,5 @@
 ---
+slug: "/webpack-bundle-size-analyzing/"
 title: "Analyzing JS Bundle Size with Webpack Visualizers"
 date: "2019-11-13"
 description: "A bundle visualizer can be a very handy tool for tracking down packages, or even your own code, for large file size offenders"
@@ -79,8 +80,8 @@ Then you'll need to add the import and config property to your `webpack.config.j
 // webpack.config.js
 const path = require("path");
 /* highlight-start */
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 /* highlight-end */
 
 module.exports = {

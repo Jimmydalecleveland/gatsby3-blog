@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { PageProps, graphql, Link } from "gatsby";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { graphql, Link, PageProps } from "gatsby";
 
 import swcLogo from "../images/swc-logo.svg";
 import LayoutGrid from "../components/Layout";
 import Typography from "../components/Typography";
-import PostCard from "../components/PostCard";
+import Search from "../components/Search";
+import type { BlogPost } from "../../@types/global";
+import Layout from "../components/Layout";
 
 interface BlogIndexProps extends PageProps {
   data: AllPostsQuery;
@@ -18,26 +19,12 @@ interface AllPostsQuery {
   };
 }
 
-interface BlogPost {
-  node: {
-    excerpt: string;
-    fields: {
-      slug: string;
-    };
-    frontmatter: {
-      title: string;
-      description: string;
-      date: string;
-      featuredImage: IGatsbyImageData;
-    };
-  };
-}
-
-const Index: React.FC<BlogIndexProps> = ({ data }) => {
+const Chat: React.FC<BlogIndexProps> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
+  console.log(data);
 
   return (
-    <LayoutGrid>
+    <Layout>
       <Helmet>
         <html lang="en" />
         <meta name="description" content="Jimmy Cleveland's Coding Blog" />
@@ -45,46 +32,26 @@ const Index: React.FC<BlogIndexProps> = ({ data }) => {
         <link rel="canonical" href="https://blog.jimmydc.com/" />
       </Helmet>
 
-      <img
-        className="main-logo"
-        src={swcLogo}
-        alt="Swashbuckling with Code text with flourish decorations and rapier in background"
-      />
+      <Link to="/" className="no-underline center-text">
+        <img
+          className="main-logo"
+          src={swcLogo}
+          alt="Swashbuckling with Code text with flourish decorations and rapier in background"
+        />
+      </Link>
       <Typography as="h2" center style={{ margin: "20px 0 32px" }}>
         A coding blog by Jimmy Cleveland
       </Typography>
-      <Typography center>
-        <Link to="/ai-chat">Try the NEW, AI-powered, chat!</Link>
-      </Typography>
 
-      {posts.map(({ node }) => {
-        const {
-          excerpt,
-          fields: { slug },
-          frontmatter: { title, description, featuredImage, date },
-        } = node;
-        const image = getImage(featuredImage);
-
-        return (
-          <PostCard
-            key={slug}
-            slug={slug}
-            title={title}
-            date={date}
-            description={description}
-            excerpt={excerpt}
-            image={image}
-          />
-        );
-      })}
-    </LayoutGrid>
+      <Search posts={posts} />
+    </Layout>
   );
 };
 
-export default Index;
+export default Chat;
 
-export const homePageQuery = graphql`
-  query HomePageQuery {
+export const chatPageQuery = graphql`
+  query ChatPageQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
@@ -93,6 +60,7 @@ export const homePageQuery = graphql`
             slug
           }
           frontmatter {
+            slug
             title
             description
             date(formatString: "MMM DD, YYYY")

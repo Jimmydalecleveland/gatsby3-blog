@@ -1,4 +1,5 @@
 ---
+slug: "/react-context-hooks/"
 title: "A simple example of the React useContext hook"
 date: "2019-10-06"
 description: "A complete code example of how to use the useContext React hook with no fluff or extra overhead."

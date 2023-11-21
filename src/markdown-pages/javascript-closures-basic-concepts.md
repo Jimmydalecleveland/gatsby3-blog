@@ -1,4 +1,5 @@
 ---
+slug: "/javascript-closures-basic-concepts/"
 title: "Javascript Closures"
 date: "2018-12-08"
 description: "There are, of course, lots of blogs writing about this topic, but if you have found your way here I hope this will give you the missing pieces to understanding closures in Javascript"

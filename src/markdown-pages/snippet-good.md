@@ -1,4 +1,5 @@
 ---
+slug: "/snippet-good/"
 title: "v1.5.0 release of JS Snippet Good VSCode Extension"
 date: "2020-02-05"
 description: "I just released version 1.5.0 of my VS Code extension: JS - Snippet Good!"

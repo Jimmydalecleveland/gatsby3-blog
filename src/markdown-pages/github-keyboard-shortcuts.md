@@ -1,4 +1,5 @@
 ---
+slug: "/github-keyboard-shortcuts/"
 title: "Github Keyboard Shortcuts"
 date: "2019-08-12"
 description: "Just a quick tip here that most programmers I meet haven't seen before so I thought it'd be cool to share."

@@ -1,4 +1,5 @@
 ---
+slug: "/cross-env-for-environment-variables/"
 title: "How to use environment variables in NPM scripts safely across operating systems"
 date: "2021-04-20"
 description: "If you've ever been stuck on `NODE_ENV is not recognized` while developing on Windows, this post is for you."

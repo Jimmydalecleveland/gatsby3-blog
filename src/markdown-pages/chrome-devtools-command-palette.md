@@ -1,4 +1,5 @@
 ---
+slug: "/chrome-devtools-command-palette/"
 title: "Chrome DevTools Command Palette"
 date: "2019-06-23"
 description: "Chrome DevTools has a Command Menu, much like VSCode and other editors!"

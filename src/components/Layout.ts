@@ -17,12 +17,24 @@ const Layout = styled.main`
     grid-column: 1 / -1;
   }
 
-  > .main-logo {
+  li {
+    margin-bottom: 10px;
+  }
+
+  .main-logo {
     grid-column: 2 / 3;
     margin: 22px auto;
     width: 300px;
     height: 154px;
     max-width: 100%;
+  }
+
+  .no-underline {
+    box-shadow: none;
+  }
+
+  .center-text {
+    text-align: center;
   }
 
   > figure {
